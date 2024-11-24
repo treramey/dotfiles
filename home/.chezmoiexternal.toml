@@ -1,0 +1,7 @@
+[".config/nvim"]
+  type = "git-repo" 
+  url = "git@github.com:treramey/nvim.git"
+
+["Library/Fonts"]
+  type = "archive"
+  url = "https://github.com/ryanoasis/nerd-fonts/releases/download/v3.2.1/JetBrainsMono.zip"

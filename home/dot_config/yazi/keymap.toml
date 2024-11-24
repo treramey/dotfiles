@@ -1,0 +1,82 @@
+[manager]
+keymap = [
+  { on = "<Esc>", run = "escape", desc = "Exit visual mode, clear selected, or cancel search" },
+  { on = "q",     run = "quit",   desc = "Exit the process" },
+
+  # Navigation
+	{ on = "k", run = "arrow -1", desc = "Move cursor up" },
+	{ on = "j", run = "arrow 1",  desc = "Move cursor down" },
+
+	{ on = "K", run = "arrow -5", desc = "Move cursor up 5 lines" },
+	{ on = "J", run = "arrow 5",  desc = "Move cursor down 5 lines" },
+
+  { on = "<Enter>", run= "plugin --sync smart-enter", desc = "Enter the child directory or open the file" },
+  { on = "l",       run= "plugin --sync smart-enter", desc = "Enter the child directory or open the file" },
+  { on = "h",       run = "leave",                    desc = "Go back to the parent directory" },
+
+  { on = "H", run = "back",    desc = "Go back to the previous directory" },
+	{ on = "L", run = "forward", desc = "Go forward to the next directory" },
+
+  { on = "<C-u>", run = "seek -8",  desc = "Seek up 8 units in the preview" },
+	{ on = "<C-d>", run = "seek 8",   desc = "Seek down 8 units in the preview" },
+
+  { on = [ "g", "g" ],  run = "arrow -99999999", desc = "Move cursor to the top" },
+	{ on = "G",           run = "arrow 99999999",  desc = "Move cursor to the bottom" },
+
+  # Selection
+	{ on = "<Space>",   run = [ "select --state=none", "arrow 1" ], desc = "Toggle the current selection state" },
+	{ on = "v",         run = "visual_mode",                        desc = "Enter visual mode (selection mode)" },
+	{ on = "V",         run = "visual_mode --unset",                desc = "Enter visual mode (unset mode)" },
+	{ on = "<C-a>",     run = "select_all --state=true",            desc = "Select all files" },
+	{ on = "<C-r>",     run = "select_all --state=none",            desc = "Inverse selection of all files" },
+
+  # Operation
+  { on = "<Enter>",   run = "open",                       desc = "Open the selected files" },
+  { on = "y",         run = "yank",                       desc = "Copy the selected files" },
+  { on = "x",         run = "yank --cut",                 desc = "Cut the selected files" },
+  { on = "p",         run = "paste",                      desc = "Paste the files" },
+  { on = ".",         run = "hidden toggle",              desc = "Toggle the visibility of hidden files" },
+  { on = "a",         run = "create",                     desc = "Create a file or directory (ends with / for directories)" },
+  { on = "r",         run = "rename --cursor=before_ext", desc = "Rename a file or directory" },
+  { on = "d",         run = "remove",                     desc = "Move the files to the trash" },
+  { on = "z",         run = "plugin zoxide",              desc = "Jump to a directory using zoxide" },
+  { on = "Z",         run = "plugin fzf",                 desc = "Jump to a directory or reveal a file using fzf" },
+  { on = ".",         run = "hidden toggle",              desc = "Toggle the visibility of hidden files" },
+
+  # Copy
+	{ on = [ "c", "c" ],  run = "copy path",              desc = "Copy the absolute path" },
+	{ on = [ "c", "d" ],  run = "copy dirname",           desc = "Copy the path of the parent directory" },
+	{ on = [ "c", "f" ],  run = "copy filename",          desc = "Copy the name of the file" },
+	{ on = [ "c", "n" ],  run = "copy name_without_ext",  desc = "Copy the name of the file without the extension" },
+
+  # Filter
+	{ on = '/', run = "filter --smart", desc = "Filter the files" },
+
+  # Find
+  { on = [ "f", "f" ],  run = "search fd",  desc = "Search files by name using fd" },
+	{ on = [ "f", "g" ],  run = "search rg",  desc = "Search files by content using ripgrep" },
+
+  # Tasks
+	{ on =  "w", run = "tasks_show", desc = "Show the tasks manager" },
+
+  # Goto
+	{ on = [ "g", "h" ],        run = "cd ~",             desc = "Go to the home directory" },
+	{ on = [ "g", "c" ],        run = "cd ~/.config",     desc = "Go to the config directory" },
+	{ on = [ "g", "d" ],        run = "cd ~/Downloads",   desc = "Go to the downloads directory" },
+	{ on = [ "g", "t" ],        run = "cd /tmp",          desc = "Go to the temporary directory" },
+	{ on = [ "g", "<Space>" ],  run = "cd --interactive", desc = "Go to a directory interactively" },
+
+  # Help
+	{ on = "?", run = "help", desc = "Open help" },
+]
+
+[input]
+prepend_keymap = [
+  { on = "<Esc>", run = "close", desc = "Cancel input" },
+]
+
+[help]
+prepend_keymap = [
+  { on = "<C-u>",   run = "arrow -5", desc = "Move cursor up 5 lines" },
+	{ on = "<C-d>", run = "arrow 5",  desc = "Move cursor down 5 lines" },
+]

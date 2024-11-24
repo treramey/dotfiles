@@ -1,0 +1,53 @@
+#!/bin/bash
+
+set -eufo pipefail
+
+{{ $taps := list
+    "koekeishiya/formulae" -}}
+{{ $brews := list
+    "bat"
+    "cmake"
+    "curl"
+    "fd"
+    "fzf"
+    "gettext"
+    "git"
+    "git-delta"
+    "gleam"
+    "go"
+    "jq"
+    "just"
+    "koekeishiya/formulae/skhd"
+    "koekeishiya/formulae/yabai"
+    "lazygit"
+    "neovim"
+    "node"
+    "nushell"
+    "ninja"
+    "pnpm"
+    "ripgrep"
+    "starship"
+    "uv"
+    "unzip"
+    "wget"
+    "yazi"
+    "zellij"
+    "zoxide" -}}
+{{ $casks := list
+    "alacritty"
+    "google-chrome"
+    "karabiner-elements"
+    "visual-studio-code"
+    "wezterm" -}}
+
+brew bundle --no-lock --file=/dev/stdin <<EOF
+{{ range ($taps | sortAlpha | uniq) -}}
+tap "{{ . }}"
+{{ end -}}
+{{ range ($brews | sortAlpha | uniq) -}}
+brew "{{ . }}"
+{{ end -}}
+{{ range ($casks | sortAlpha | uniq) -}}
+cask "{{ . }}"
+{{ end -}}
+EOF

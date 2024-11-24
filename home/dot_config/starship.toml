@@ -1,0 +1,90 @@
+# Get editor completions based on the config schema
+"$schema" = 'https://starship.rs/config-schema.json'
+
+add_newline = true
+
+[character]
+success_symbol = "[󱢺](bold green)"
+error_symbol = "[󰚌](bold red)"
+
+[aws]
+symbol = " "
+
+[conda]
+symbol = " "
+
+[dart]
+symbol = " "
+format = "via [$symbol]($style)"
+
+[directory]
+read_only = " "
+truncation_length = 1
+
+[docker_context]
+symbol = " "
+
+[elixir]
+symbol = " "
+format = 'via [$symbol]($style)'
+
+[elm]
+symbol = " "
+
+[git_branch]
+symbol = " "
+
+[hg_branch]
+symbol = " "
+
+[java]
+symbol = " "
+format = 'via [$symbol]($style)'
+
+[julia]
+symbol = " "
+
+[nix_shell]
+symbol = " "
+
+[perl]
+symbol = " "
+
+[php]
+symbol = " "
+
+[python]
+symbol = " "
+format = 'via [$symbol]($style)'
+
+[ruby]
+symbol = " "
+
+[rust]
+format = 'via [$symbol]($style)'
+
+[scala]
+symbol = " "
+
+[shlvl]
+symbol = " "
+
+[swift]
+symbol = "ﯣ "
+format = 'via [$symbol]($style)'
+
+[golang]
+symbol = " "
+style = "#01add8"
+
+[rust]
+symbol = " "
+style = '#dea584'
+
+[nodejs]
+symbol = "󰎙 "
+style = "#5fa04e"
+detect_files = ["package.json"]
+
+[package]
+disabled = true

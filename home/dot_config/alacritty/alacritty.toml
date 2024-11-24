@@ -1,0 +1,29 @@
+
+# [shell]
+# program = "/usr/local/bin/zellij"
+
+[window]
+blur = true
+opacity = 0.72
+decorations = "Buttonless"
+option_as_alt = "OnlyLeft"
+
+[font]
+size = 15
+
+[font.normal]
+family = "JetBrainsMono Nerd Font"
+
+[selection]
+save_to_clipboard = true
+
+[cursor.style]
+shape = "Beam"
+
+[mouse]
+hide_when_typing = true
+
+[general]
+import = [
+  "~/.config/alacritty/catppuccin-mocha.toml"
+]

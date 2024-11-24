@@ -1,0 +1,74 @@
+[user]
+  name = "Trevor Ramey"
+  email = "hello@trevors.world"
+
+[includeIf "gitdir:~/workspace/work/"]
+  path = "~/workspace/work/.gitconfig"
+
+[init]
+  defaultBranch = main
+
+[core]
+  editor = "nvim"
+  excludesfile ="~/.gitignore"
+  pager = delta
+  autocrlf = input
+
+  # Make `git rebase` safer on macOS.
+  # More info: <http://www.git-tower.com/blog/make-git-rebase-safe-on-osx/>
+  trustctime = false
+
+  # Speed up commands involving untracked files such as `git status`.
+  # https://git-scm.com/docs/git-update-index#_untracked_cache
+  untrackedCache = true
+
+[format]
+  pretty = format:%C(yellow)%h %Cblue%>(15)%ad %Cgreen%<(15)%aN%Cred%d %Creset%s
+
+[alias]
+  br = "branch"
+  co = "checkout"
+
+  # View the current working tree status using the short format.
+  s = status -s
+
+  # Show the user email for the current repository.
+  whoami = config user.email
+
+[diff]
+  colorMoved = default
+
+[interactive]
+  diffFilter = delta --color-only
+
+[delta]
+  features = catppuccin-mocha
+
+[delta "catppuccin-mocha"]
+  blame-palette = "#1e1e2e #181825 #11111b #313244 #45475a"
+  commit-decoration-style = box ul
+  dark = true
+  file-style = "#89b4fa"  # blue
+  file-decoration-style = "#b4befe" # lavender
+  hunk-header-style = "omit"
+  line-numbers = true
+  line-numbers-zero-style = "#6c7086" # overlay0
+  line-numbers-left-style = "#6c7086" # overlay0
+  line-numbers-right-style = "#6c7086" # overlay0
+  line-numbers-plus-style = bold "#a6e3a1" # green
+  line-numbers-minus-style = bold "#f38ba8" # red
+  # 25% red 75% base
+  minus-emph-style = bold syntax "#8c5656"
+  # 10% red 90% base
+  minus-style = syntax "#34293a"
+  # 25% green 75% base
+  plus-emph-style = bold syntax "#659383"
+  # 10% green 90% base
+  plus-style = syntax "#2c3239"
+  map-styles = \
+    bold purple => syntax "#494060", \
+    bold blue => syntax "#384361", \
+    bold cyan => syntax "#384d5d", \
+    bold yellow => syntax "#544f4e"
+  # Should match the name of the bat theme
+  syntax-theme = Catppuccin Mocha

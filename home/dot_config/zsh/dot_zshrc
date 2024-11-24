@@ -1,0 +1,27 @@
+# ZSH only and most performant way to check existence of an executable
+exists() { (( $+commands[$1] )); }
+
+# disable vi mode
+bindkey -e
+
+# history
+HISTSIZE=100000
+SAVEHIST=100000
+HISTFILE=$ZSH_CACHE_DIR/zsh_history
+
+# alias
+alias zj=zellij
+alias lg=lazygit
+
+if exists zoxide; then
+  eval "$(zoxide init zsh)"
+fi
+
+if exists starship; then
+  eval "$(starship init zsh)"
+fi
+
+if exists fzf; then
+  source <(fzf --zsh)
+fi
+

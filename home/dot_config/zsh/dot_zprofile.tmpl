@@ -1,0 +1,10 @@
+{{ if stat "/usr/local/bin/brew" -}}
+fpath+=("{{ output "/usr/local/bin/brew" "--prefix" | trim }}/share/zsh/site-functions")
+
+eval "$(/usr/local/bin/brew shellenv)"
+{{ end -}}
+
+{{ if stat "/opt/homebrew/bin/brew" -}}
+  fpath+=("{{ output "/opt/homebrew/bin/brew" "--prefix" | trim }}/share/zsh/site-functions")
+  eval "$(/opt/homebrew/bin/brew shellenv)"
+{{ end -}}

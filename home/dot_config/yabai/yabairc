@@ -1,0 +1,44 @@
+#!/usr/bin/env sh
+
+yabai -m signal --add event=dock_did_restart action="sudo yabai --load-sa"
+sudo yabai --load-sa
+
+yabai_config=(
+  layout                    bsp
+  top_padding               10
+  bottom_padding            10
+  left_padding              13
+  right_padding             13
+  window_gap                10
+  auto_balance              off
+  mouse_follows_focus       off
+  focus_follows_mouse       autofocus
+  window_placement          second_child
+  window_shadow             off
+  window_opacity            on
+  active_window_opacity     1.0
+  normal_window_opacity     0.6
+  window_opacity_duration   0.6
+  window_animation_duration 0.8
+  window_animation_easing   ease_out_quad
+)
+
+yabai -m config ${yabai_config[*]}
+
+yabai -m space 1 --label left 
+yabai -m space 2 --label main
+yabai -m space 3 --label right
+
+yabai -m rule --add app="^(Messages|Mail|Calculator|Software Update|Dictionary|System Preferences|System Settings|Photo Booth|Archive Utility|App Store|Activity Monitor|Clock|Preview|Font Book)$" manage=off
+yabai -m rule --add app="^Arc$" title="^Space [0-9]+$|ybf$" manage=off
+
+yabai -m rule --add app="^(Karabiner-Elements|Karabiner-EventViewer|HTTPie|Postman|Clash Verge|SwitchHosts|Docker Desktop|DBeaver)$" manage=off
+
+yabai -m rule --add app="^Microsoft Teams$" manage=off space=left
+yabai -m rule --add app="^(Discord|Spotify)$" manage=off space=right
+
+yabai -m space --focus main
+
+yabai -m rule --apply
+
+echo "yabai configuration loaded.."
