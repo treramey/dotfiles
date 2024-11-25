@@ -2,7 +2,6 @@
 #
 # version = "0.95.0"
 
-
 # Specifies how environment variables are:
 # - converted from a string to a value on Nushell startup (from_string)
 # - converted from a value back to a string when running external commands (to_string)
@@ -52,6 +51,7 @@ $env.PATH = (
   | append ($env.HOME | path join .local bin)
   | uniq
 )
+$env.LS_COLORS = ((cat ~/.config/nushell/ls-colors) | str trim)
 
 # To load from a custom file you can use:
 # source ($nu.default-config-dir | path join 'custom.nu')

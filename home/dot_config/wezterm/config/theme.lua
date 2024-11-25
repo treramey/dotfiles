@@ -4,7 +4,7 @@ local M = {}
 
 M.colors = {
   foreground = colors.text,
-  background = colors.base,
+  background = colors.crust,
   cursor_fg = colors.crust,
   cursor_bg = colors.rosewater,
   cursor_border = colors.rosewater,
@@ -21,7 +21,7 @@ M.colors = {
     colors.subtext1, -- white
   },
   brights = {
-    colors.base, -- black
+    colors.overlay0, -- black
     colors.red, -- red
     colors.green, -- green
     colors.yellow, -- yellow
