@@ -60,9 +60,6 @@ format = 'via [$symbol]($style)'
 [ruby]
 symbol = " "
 
-[rust]
-format = 'via [$symbol]($style)'
-
 [scala]
 symbol = " "
 
