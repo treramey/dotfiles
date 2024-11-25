@@ -3,18 +3,22 @@
 set -eufo pipefail
 
 {{ $taps := list
-    "koekeishiya/formulae" -}}
+    "koekeishiya/formulae"
+    "homebrew/cask-fonts" -}} 
 {{ $brews := list
     "bat"
     "cmake"
     "curl"
     "fd"
+    "ffmpeg"
+    "ffmpegthumbnailer"
     "fzf"
     "gettext"
     "git"
     "git-delta"
     "gleam"
     "go"
+    "imagemagick"
     "jq"
     "just"
     "koekeishiya/formulae/skhd"
@@ -25,7 +29,9 @@ set -eufo pipefail
     "nushell"
     "ninja"
     "pnpm"
+    "poppler"
     "ripgrep"
+    "sevenzip"
     "starship"
     "uv"
     "unzip"
@@ -35,6 +41,7 @@ set -eufo pipefail
     "zoxide" -}}
 {{ $casks := list
     "alacritty"
+    "font-symbols-only-nerd-font"
     "google-chrome"
     "karabiner-elements"
     "visual-studio-code"
