@@ -17,10 +17,11 @@ yabai_config=(
   window_shadow             off
   window_opacity            on
   active_window_opacity     1.0
-  normal_window_opacity     0.6
-  window_opacity_duration   0.6
-  window_animation_duration 0.8
+  normal_window_opacity     0.9
+  window_opacity_duration   0.2
+  window_animation_duration 0.2
   window_animation_easing   ease_out_quad
+  insert_feedback_color     0xffbabbf1
 )
 
 yabai -m config ${yabai_config[*]}
