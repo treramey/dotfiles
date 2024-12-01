@@ -21,6 +21,26 @@ if exists starship; then
   eval "$(starship init zsh)"
 fi
 
+zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}' # make lowercase tab-complete case insensitive
+
+# COMPLETIONS
+FPATH=$HOME/.zsh/completions:$FPATH
+if type brew &>/dev/null; then
+	FPATH=$(brew --prefix)/share/zsh-completions:$FPATH
+fi
+autoload -Uz compinit && compinit
+
+# AZURE CLI
+if type az &>/dev/null; then
+  autoload bashcompinit && bashcompinit
+  source $(brew --prefix)/etc/bash_completion.d/az
+fi
+
+# KUBECTL
+if type kubectl &>/dev/null; then
+  source <(kubectl completion zsh)
+fi
+
 if exists fzf; then
   source <(fzf --zsh)
 fi

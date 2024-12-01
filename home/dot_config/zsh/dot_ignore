@@ -1,0 +1,15 @@
+Library
+Music
+Movies
+Public
+Documents
+Downloads
+Pictures
+.local
+.cache
+.DS_Store
+.Trash
+.npm
+.CFUserTextEncoding
+__pycache__
+.zsh_sessions
