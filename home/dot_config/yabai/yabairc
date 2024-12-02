@@ -15,31 +15,31 @@ yabai_config=(
   focus_follows_mouse       autofocus
   window_placement          second_child
   window_shadow             off
-  window_opacity            on
-  active_window_opacity     1.0
-  normal_window_opacity     0.9
-  window_opacity_duration   0.2
-  window_animation_duration 0.2
-  window_animation_easing   ease_out_quad
   insert_feedback_color     0xffbabbf1
 )
 
 yabai -m config ${yabai_config[*]}
 
-yabai -m space 1 --label left 
-yabai -m space 2 --label main
-yabai -m space 3 --label right
+yabai -m space 1 --label fun 
+yabai -m space 2 --label left 
+yabai -m space 3 --label main
+yabai -m space 4 --label right
+yabai -m space 5 --label chat
+yabai -m space 6 --label music
 
 yabai -m rule --add app="^(Messages|Mail|Calculator|Software Update|Dictionary|System Preferences|System Settings|Photo Booth|Archive Utility|App Store|Activity Monitor|Clock|Preview|Font Book)$" manage=off
 yabai -m rule --add app="^Arc$" title="^Space [0-9]+$|ybf$" manage=off
 
-yabai -m rule --add app="^(Karabiner-Elements|Karabiner-EventViewer|HTTPie|Postman|Clash Verge|SwitchHosts|Docker Desktop|DBeaver)$" manage=off
+yabai -m rule --add app="^(Karabiner-Elements|Karabiner-EventViewer|HTTPie|Postman|Clash Verge|SwitchHosts|Docker Desktop)$" manage=off
 
-yabai -m rule --add app="^Microsoft Teams$" manage=off space=left
-yabai -m rule --add app="^(Discord|Spotify)$" manage=off space=right
+yabai -m rule --add app="^(Arc)$" manage=off space=left
+yabai -m rule --add app="^(WezTerm|Rider|DataGrip)$" space=main
+yabai -m rule --add app="^(Discord|Microsoft Teams)$" manage=off space=chat
+yabai -m rule --add app="^(Spotify)$" space=music
 
 yabai -m space --focus main
 
 yabai -m rule --apply
 
+borders active_color=0xff8087a2 inactive_color=0xff494d64 width=5.0 &
 echo "yabai configuration loaded.."

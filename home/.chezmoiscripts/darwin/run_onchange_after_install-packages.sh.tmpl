@@ -3,10 +3,12 @@
 set -eufo pipefail
 
 {{ $taps := list
+    "FelixKratz/formulae"
     "koekeishiya/formulae"
     "homebrew/cask-fonts" -}} 
 {{ $brews := list
     "bat"
+    "borders"
     "cmake"
     "curl"
     "fd"
