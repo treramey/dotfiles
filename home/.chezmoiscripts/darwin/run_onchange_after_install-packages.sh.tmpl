@@ -4,6 +4,7 @@ set -eufo pipefail
 
 {{ $taps := list
     "FelixKratz/formulae"
+    "isen-ng/dotnet-sdk-versions"
     "koekeishiya/formulae" -}} 
 {{ $brews := list
     "bat"
@@ -42,6 +43,8 @@ set -eufo pipefail
     "zoxide" -}}
 {{ $casks := list
     "alacritty"
+    "dotnet-sdk9"
+    "dotnet-sdk8"
     "font-symbols-only-nerd-font"
     "google-chrome"
     "karabiner-elements"
