@@ -1,0 +1,3 @@
+[submodule "home/dot_config/zsh/dot_zsh/plugins/zsh-git-worktree"]
+	path = home/dot_config/zsh/dot_zsh/plugins/zsh-git-worktree
+	url = https://github.com/egyptianbman/zsh-git-worktrees.git

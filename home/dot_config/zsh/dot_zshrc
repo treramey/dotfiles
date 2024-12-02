@@ -1,3 +1,7 @@
+#!/usr/bin/env zsh
+
+fpath=($ZDOTDIR/.zsh/plugins $fpath)
+
 # ZSH only and most performant way to check existence of an executable
 exists() { (( $+commands[$1] )); }
 
@@ -21,7 +25,18 @@ if exists starship; then
   eval "$(starship init zsh)"
 fi
 
+# +----------+
+# | worktree |
+# +----------+
+source $ZDOTDIR/.zsh/plugins/zsh-git-worktree/zsh-git-worktrees.zsh
+
+# +-------+
+# | alias |
+# +-------+
+source $ZDOTDIR/.zsh/scripts/aliais.zsh
+
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}' # make lowercase tab-complete case insensitive
+
 
 # COMPLETIONS
 FPATH=$HOME/.zsh/completions:$FPATH
