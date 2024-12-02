@@ -27,14 +27,13 @@ yabai -m space 4 --label right
 yabai -m space 5 --label chat
 yabai -m space 6 --label music
 
-yabai -m rule --add app="^(Messages|Mail|Calculator|Software Update|Dictionary|System Preferences|System Settings|Photo Booth|Archive Utility|App Store|Activity Monitor|Clock|Preview|Font Book)$" manage=off
+yabai -m rule --add app="^(Messages|Mail|Outlook|Calculator|Software Update|Dictionary|System Preferences|System Settings|Photo Booth|Archive Utility|App Store|Activity Monitor|Clock|Preview|Font Book)$" manage=off
 yabai -m rule --add app="^Arc$" title="^Space [0-9]+$|ybf$" manage=off
-
-yabai -m rule --add app="^(Karabiner-Elements|Karabiner-EventViewer|HTTPie|Postman|Clash Verge|SwitchHosts|Docker Desktop)$" manage=off
+yabai -m rule --add app="^(Karabiner-Elements|Karabiner-EventViewer|HTTPie|Postman|Clash Verge|SwitchHosts|Docker Desktop| Microsoft Teams)$" manage=off
 
 yabai -m rule --add app="^(Arc)$" manage=off space=left
 yabai -m rule --add app="^(WezTerm|Rider|DataGrip)$" space=main
-yabai -m rule --add app="^(Discord|Microsoft Teams)$" manage=off space=chat
+yabai -m rule --add app="^(Discord|Microsoft Teams)$" space=chat
 yabai -m rule --add app="^(Spotify)$" space=music
 
 yabai -m space --focus main
