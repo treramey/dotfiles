@@ -1,6 +1,6 @@
 [user]
   name = "Trevor Ramey"
-  email = "hello@trevors.world"
+  email = "hello@trevors.email"
 
 [includeIf "gitdir:~/workspace/work/"]
   path = "~/workspace/work/.gitconfig"
