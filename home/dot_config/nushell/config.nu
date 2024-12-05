@@ -1,6 +1,5 @@
 # Nushell Config File
-
-use ~/.cache/starship.nu
+use ~/.cache/starship/init.nu
 
 source ~/.cache/zoxide.nu
 

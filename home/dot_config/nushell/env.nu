@@ -6,6 +6,15 @@
 # - converted from a string to a value on Nushell startup (from_string)
 # - converted from a value back to a string when running external commands (to_string)
 # Note: The conversions happen *after* config.nu is loaded
+
+def create_left_prompt [] {
+    starship prompt --cmd-duration $env.CMD_DURATION_MS $'--status=($env.LAST_EXIT_CODE)'
+}
+
+def create_right_prompt [] {
+    starship prompt --right
+}
+
 $env.ENV_CONVERSIONS = {
     "PATH": {
         from_string: { |s| $s | split row (char esep) | path expand --no-symlink }
@@ -36,7 +45,6 @@ $env.CARGO_HOME = ($env.HOME | path join .cargo)
 
 $env.GOPATH = ($env.HOME | path join .go)
 $env.GO111MODULE = "on"
-$env.GOPROXY = "https://goproxy.cn,direct"
 
 $env.PNPM_HOME = ($env.HOME | path join .pnpm)
 
@@ -53,11 +61,28 @@ $env.PATH = (
 )
 $env.LS_COLORS = ((cat ~/.config/nushell/ls-colors) | str trim)
 
-# To load from a custom file you can use:
-# source ($nu.default-config-dir | path join 'custom.nu')
+# Use nushell functions to define your right and left prompt
+$env.PROMPT_COMMAND = { create_left_prompt }
+$env.PROMPT_COMMAND_RIGHT = { create_right_prompt }
+
+# The prompt indicators are environment variables that represent
+# the state of the prompt
+$env.PROMPT_INDICATOR = "〉"
+$env.PROMPT_INDICATOR_VI_INSERT = $": (ansi -e '6 q')"
+$env.PROMPT_INDICATOR_VI_NORMAL = $"〉(ansi -e '2 q')"
+$env.PROMPT_MULTILINE_INDICATOR = "::: "
+
+# fzf
+$env.FZF_DEFAULT_COMMAND = "fd --type file --hidden --follow"
+$env.FZF_DEFAULT_OPTS = ([
+		"--cycle"
+		"--bind 'alt-enter:print-query,tab:toggle-up,ctrl-y:execute-silent(echo {} | copy)'"
+		"--preview 'bat --line-range :500 {}'"
+	] | str join " ")
+$env.config.show_banner = false
 
 # starship
-starship init nu | save -f ~/.cache/starship.nu
+starship init nu | save -f ~/.cache/starship/init.nu
 
 # zoxide 
 zoxide init nushell | save -f ~/.cache/zoxide.nu

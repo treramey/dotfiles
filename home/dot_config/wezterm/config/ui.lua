@@ -3,7 +3,7 @@ local wezterm = require("wezterm")
 local M = {
   audible_bell = "Disabled",
 
-  default_prog = { "nu", "-l" },
+  default_prog = { "/usr/local/bin/nu", "-l" },
 
   set_environment_variables = {
     XDG_CONFIG_HOME = os.getenv("HOME") .. "/.config",
