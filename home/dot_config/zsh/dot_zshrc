@@ -8,14 +8,62 @@ exists() { (( $+commands[$1] )); }
 # disable vi mode
 bindkey -e
 
+# +---------+
+# | HISTORY |
+# +---------+
+setopt extended_history          # Write the history file in the ':start:elapsed;command' format.
+setopt share_history             # Share history between all sessions.
+setopt hist_expire_dups_first    # Expire a duplicate event first when trimming history.
+setopt hist_ignore_dups          # Do not record an event that was just recorded again.
+setopt hist_ignore_all_dups      # Delete an old recorded event if a new event is a duplicate.
+setopt hist_find_no_dups         # Do not display a previously found event.
+setopt hist_ignore_space         # Do not record an event starting with a space.
+setopt hist_save_no_dups         # Do not write a duplicate event to the history file.
+setopt hist_verify               # Do not execute immediately upon history expansion.
+
 # history
 HISTSIZE=100000
 SAVEHIST=100000
 HISTFILE=$ZSH_CACHE_DIR/zsh_history
 
-# alias
-alias zj=zellij
-alias lg=lazygit
+# +-------+
+# | alias |
+# +-------+
+source $ZDOTDIR/scripts/aliais.zsh
+
+# +------------+
+# | cpmpletion |
+# +------------+
+source $ZDOTDIR/scripts/completion.zsh
+
+# +---------------------+
+# | SYNTAX HIGHLIGHTING |
+# +---------------------+
+# TO set activate highlighter
+ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern cursor)
+
+# Declare the variable
+typeset -A ZSH_HIGHLIGHT_STYLES
+
+# To differentiate aliases from other command types
+ZSH_HIGHLIGHT_STYLES[alias]='fg=#94e2d5,bold'
+
+# To have paths colored instead of underlined
+ZSH_HIGHLIGHT_STYLES[path]='fg=#cba6f7'
+
+# AZURE CLI
+if type az &>/dev/null; then
+  autoload bashcompinit && bashcompinit
+  source $(brew --prefix)/etc/bash_completion.d/az
+fi
+
+if type kubectl &>/dev/null; then
+  source <(kubectl completion zsh)
+fi
+
+if exists fzf; then
+  source <(fzf --zsh)
+fi
 
 if exists zoxide; then
   eval "$(zoxide init zsh)"
@@ -25,38 +73,11 @@ if exists starship; then
   eval "$(starship init zsh)"
 fi
 
-# +----------+
-# | worktree |
-# +----------+
-source $ZDOTDIR/.zsh/plugins/zsh-git-worktree/zsh-git-worktrees.zsh
-
-# +-------+
-# | alias |
-# +-------+
-source $ZDOTDIR/.zsh/scripts/aliais.zsh
-
-zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}' # make lowercase tab-complete case insensitive
-
-
-# COMPLETIONS
-FPATH=$HOME/.zsh/completions:$FPATH
-if type brew &>/dev/null; then
-	FPATH=$(brew --prefix)/share/zsh-completions:$FPATH
-fi
-autoload -Uz compinit && compinit
-
-# AZURE CLI
-if type az &>/dev/null; then
-  autoload bashcompinit && bashcompinit
-  source $(brew --prefix)/etc/bash_completion.d/az
+if exists fnm; then
+  eval "$(fnm env --use-on-cd)"
 fi
 
-# KUBECTL
-if type kubectl &>/dev/null; then
-  source <(kubectl completion zsh)
-fi
-
-if exists fzf; then
-  source <(fzf --zsh)
-fi
-
+# +-------------------------+
+# | zsh-syntax-highlighting |
+# +-------------------------+
+source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
