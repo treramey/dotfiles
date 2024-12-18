@@ -1,6 +1,6 @@
 [".config/nvim"]
   type = "git-repo" 
-  url = "git@github.com:treramey/nvim.git"
+  url = "https://github.com/treramey/nvim.git"
 
 ["Library/Fonts"]
   type = "archive"
