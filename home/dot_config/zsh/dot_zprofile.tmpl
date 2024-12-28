@@ -1,10 +1,10 @@
-{{ if stat "/usr/local/bin/brew" -}}
-fpath+=("{{ output "/usr/local/bin/brew" "--prefix" | trim }}/share/zsh/site-functions")
-
-eval "$(/usr/local/bin/brew shellenv)"
-{{ end -}}
-
-{{ if stat "/opt/homebrew/bin/brew" -}}
-  fpath+=("{{ output "/opt/homebrew/bin/brew" "--prefix" | trim }}/share/zsh/site-functions")
-  eval "$(/opt/homebrew/bin/brew shellenv)"
-{{ end -}}
+{{- if .homebrew -}}
+{{-   $brew := "" -}}
+{{-   if eq .chezmoi.arch "arm64" -}}
+{{-     $brew = "/opt/homebrew/bin/brew" -}}
+{{-   else -}}
+{{-     $brew = "/usr/local/bin/brew" -}}
+{{-   end -}}
+fpath+=("{{ output $brew "--prefix" | trim }}/share/zsh/site-functions")
+eval "$({{ $brew }} shellenv)"
+{{- end -}}

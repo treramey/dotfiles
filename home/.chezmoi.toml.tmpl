@@ -1,1 +1,22 @@
+{{- $homebrew := false -}}
+
+{{- if eq .chezmoi.os "darwin" -}}
+{{-   if or (stat "/usr/local/bin/brew") (stat "/opt/homebrew/bin/brew") -}}
+{{-     $homebrew = true -}}
+{{-   end -}}
+{{- else -}}
+{{-   $homebrew = false -}}
+{{- end -}}
+
+{{- $nushell := "/usr/bin/nu" -}}
+{{- if stat "/usr/local/bin/nu" -}}
+{{-   $nushell = "/usr/local/bin/nu" -}}
+{{- else if stat "/opt/homebrew/bin/nu" -}}
+{{-   $nushell = "/opt/homebrew/bin/nu" -}}
+{{- end -}}
+
 sourceDir = "~/.dotfiles"
+
+[data]
+  homebrew = {{ $homebrew }}
+  nushell = {{ $nushell | quote }}

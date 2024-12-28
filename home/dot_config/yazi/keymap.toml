@@ -10,8 +10,8 @@ keymap = [
 	{ on = "K", run = "arrow -5", desc = "Move cursor up 5 lines" },
 	{ on = "J", run = "arrow 5",  desc = "Move cursor down 5 lines" },
 
-  { on = "<Enter>", run= "plugin --sync smart-enter", desc = "Enter the child directory or open the file" },
-  { on = "l",       run= "plugin --sync smart-enter", desc = "Enter the child directory or open the file" },
+  { on = "<Enter>", run= "plugin smart-enter", desc = "Enter the child directory or open the file" },
+  { on = "l",       run= "plugin smart-enter", desc = "Enter the child directory or open the file" },
   { on = "h",       run = "leave",                    desc = "Go back to the parent directory" },
 
   { on = "H", run = "back",    desc = "Go back to the previous directory" },
@@ -24,11 +24,11 @@ keymap = [
 	{ on = "G",           run = "arrow 99999999",  desc = "Move cursor to the bottom" },
 
   # Selection
-	{ on = "<Space>",   run = [ "select --state=none", "arrow 1" ], desc = "Toggle the current selection state" },
+	{ on = "<Space>",   run = [ "toggle", "arrow 1" ], desc = "Toggle the current selection state" },
 	{ on = "v",         run = "visual_mode",                        desc = "Enter visual mode (selection mode)" },
 	{ on = "V",         run = "visual_mode --unset",                desc = "Enter visual mode (unset mode)" },
-	{ on = "<C-a>",     run = "select_all --state=true",            desc = "Select all files" },
-	{ on = "<C-r>",     run = "select_all --state=none",            desc = "Inverse selection of all files" },
+	{ on = "<C-a>",     run = "toggle_all --state=on",            desc = "Select all files" },
+	{ on = "<C-r>",     run = "toggle_all",            desc = "Inverse selection of all files" },
 
   # Operation
   { on = "<Enter>",   run = "open",                       desc = "Open the selected files" },
@@ -53,8 +53,8 @@ keymap = [
 	{ on = '/', run = "filter --smart", desc = "Filter the files" },
 
   # Find
-  { on = [ "f", "f" ],  run = "search fd",  desc = "Search files by name using fd" },
-	{ on = [ "f", "g" ],  run = "search rg",  desc = "Search files by content using ripgrep" },
+  { on = [ "f", "f" ],  run = "search --via=fd",  desc = "Search files by name using fd" },
+	{ on = [ "f", "g" ],  run = "search --via=rg",  desc = "Search files by content using ripgrep" },
 
   # Tasks
 	{ on =  "w", run = "tasks_show", desc = "Show the tasks manager" },

@@ -28,7 +28,7 @@ gui:
       - '#bac2de' # '#cdd6f4'
   authorColors:
     '*': '#b4befe'
-  nerdFontsVersion: "3"
+    nerdFontsVersion: "3"
 git:
   paging:
     colorArg: always
