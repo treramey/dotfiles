@@ -34,6 +34,16 @@ keybinds clear-defaults=true {
         bind "J" { MovePane "Down"; SwitchToMode "Normal"; }
         bind "K" { MovePane "Up"; SwitchToMode "Normal"; }
 
+        bind "1" { GoToTab 1; SwitchToMode "Normal"; }
+        bind "2" { GoToTab 2; SwitchToMode "Normal"; }
+        bind "3" { GoToTab 3; SwitchToMode "Normal"; }
+        bind "4" { GoToTab 4; SwitchToMode "Normal"; }
+        bind "5" { GoToTab 5; SwitchToMode "Normal"; }
+        bind "6" { GoToTab 6; SwitchToMode "Normal"; }
+        bind "7" { GoToTab 7; SwitchToMode "Normal"; }
+        bind "8" { GoToTab 8; SwitchToMode "Normal"; }
+        bind "9" { GoToTab 9; SwitchToMode "Normal"; }
+
         // Pane: Zoom
         bind "Space" { ToggleFocusFullscreen; SwitchToMode "Normal"; }
 
@@ -105,12 +115,24 @@ theme "catppuccin-mocha"
 
 ui {
     pane_frames {
-        rounded_corners true
         hide_session_name true
     }
 }
 
+pane_frames false
+
 plugins {
+    tab-bar location="zellij:tab-bar"
+    status-bar location="zellij:status-bar"
+    strider location="zellij:strider"
     compact-bar location="zellij:compact-bar"
     session-manager location="zellij:session-manager"
+    welcome-screen location="zellij:session-manager" {
+        welcome_screen true
+    }
+    filepicker location="zellij:strider" {
+        cwd "/"
+    }
+    configuration location="zellij:configuration"
+    plugin-manager location="zellij:plugin-manager"
 }
