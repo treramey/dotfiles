@@ -50,6 +50,7 @@ set -eufo pipefail
     "dotnet-sdk8"
     "font-symbols-only-nerd-font"
     "google-chrome"
+    "ghostty",
     "karabiner-elements"
     "visual-studio-code"
     "wezterm" -}}
@@ -65,3 +66,4 @@ brew "{{ . }}"
 cask "{{ . }}"
 {{ end -}}
 EOF
+

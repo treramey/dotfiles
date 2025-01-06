@@ -21,6 +21,8 @@ setopt hist_ignore_space         # Do not record an event starting with a space.
 setopt hist_save_no_dups         # Do not write a duplicate event to the history file.
 setopt hist_verify               # Do not execute immediately upon history expansion.
 
+set -o AUTO_CD
+
 # history
 HISTSIZE=100000
 SAVEHIST=100000
