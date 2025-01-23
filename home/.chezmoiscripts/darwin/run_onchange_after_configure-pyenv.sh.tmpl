@@ -1,0 +1,18 @@
+{{ if (eq .chezmoi.os "darwin") -}}
+
+#!/bin/bash
+
+set -eufo pipefail
+
+source ~/.pyenvrc
+
+PYVER={{ .python_ver }}
+
+if [[ "$(pyenv global)" != "$PYVER" ]]; then
+    pyenv install $PYVER
+    pyenv global $PYVER
+
+    pip install virtualenvwrapper
+fi
+
+{{ end -}}

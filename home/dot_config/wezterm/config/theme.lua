@@ -4,14 +4,14 @@ local M = {}
 
 M.colors = {
   foreground = colors.text,
-  background = colors.crust,
+  background = colors.base,
   cursor_fg = colors.crust,
   cursor_bg = colors.rosewater,
   cursor_border = colors.rosewater,
   selection_bg = colors.surface2,
   selection_fg = colors.text,
   ansi = {
-    colors.base, -- black
+    colors.crust, -- black
     colors.red, -- red
     colors.green, -- green
     colors.yellow, -- yellow
