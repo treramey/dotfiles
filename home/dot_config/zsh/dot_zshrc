@@ -83,3 +83,8 @@ fi
 # | zsh-syntax-highlighting |
 # +-------------------------+
 source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+# +-------------------------+
+# |    zsh-git-worktrees    |
+# +-------------------------+
+source $ZDOTDIR/plugins/zsh-git-worktrees/zsh-git-worktrees.zsh

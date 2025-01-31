@@ -1,0 +1,18 @@
+local repo="$(basename $(dirname $PWD))"
+local branch="$1"
+local dir="$2"
+
+cd ../
+rm "$repo" 2>/dev/null
+ln -s "$dir" "$repo"
+
+cd "$repo"
+git branch --set-upstream-to "origin/$branch" 2> /dev/null
+
+if command -v tmux > /dev/null 2>&1; then
+  tmux set-environment -g PWD "$(dirname $PWD)/$repo" > /dev/null 2>&1
+fi
+
+echo "Switched to \"$branch\" worktree"
+
+# vim: ft=zsh sw=2 ts=2 et
