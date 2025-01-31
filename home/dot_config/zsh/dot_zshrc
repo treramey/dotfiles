@@ -79,6 +79,10 @@ if exists fnm; then
   eval "$(fnm env --use-on-cd --shell zsh)"
 fi
 
+if exists pyenv; then
+  eval "$(pyenv init - -zsh)"
+fi
+
 # +-------------------------+
 # | zsh-syntax-highlighting |
 # +-------------------------+
