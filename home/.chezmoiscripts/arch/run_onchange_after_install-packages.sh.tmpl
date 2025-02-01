@@ -120,16 +120,6 @@ fi
 echo "Installing packages..."
 paru -Sy --needed --noconfirm "${packages[@]}"
 
-# Enable and start necessary services
-echo "Enabling and starting services..."
-sudo systemctl enable --now docker.service
-sudo systemctl enable --now cronie.service
-sudo systemctl enable --now syncthing.service
-sudo systemctl enable --now tailscale.service
-
-# Add user to docker group
-sudo usermod -aG docker $USER
-
 echo "Package installation complete!"
 
 {{ end -}}
