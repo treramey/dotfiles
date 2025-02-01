@@ -124,6 +124,9 @@ set -eufo pipefail
    "zsh-syntax-highlighting-git" -}}
 
 echo "Installing packages"
-printf "%s\n" {{ $packages | sortAlpha | uniq | join " " }} > /tmp/pkglist
-sudo pacman -D --asexplicit - < /tmp/pkglist
-paru -S --asexplicit --needed - < /tmp/pkglist
+PKGLIST="/tmp/pkglist.$$"
+trap 'rm -f "$PKGLIST"' EXIT
+
+printf "%s\n" {{ $packages | sortAlpha | uniq | join " " }} > "$PKGLIST"
+sudo pacman -D --asexplicit - < "$PKGLIST"
+paru -S --asexplicit --needed - < "$PKGLIST"
