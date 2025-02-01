@@ -1,0 +1,17 @@
+fork = false
+frame = "buttonless"
+idle = true
+maximized = false
+no-multigrid = false
+neovim-bin = '/usr/local/bin/nvim'
+theme = "auto"
+srgb = false
+tabs = false
+title-hidden = true
+vsync = false
+wsl = false
+
+[font]
+size = 14
+hinting = "full"
+normal = ["JetBrainsMono Nerd Font"]
