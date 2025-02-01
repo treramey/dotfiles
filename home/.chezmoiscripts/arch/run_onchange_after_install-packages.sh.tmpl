@@ -127,6 +127,8 @@ echo "Installing packages"
 PKGLIST="/tmp/pkglist.$$"
 trap 'rm -f "$PKGLIST"' EXIT
 
+# Get package list
 printf "%s\n" {{ $packages | sortAlpha | uniq | join " " }} > "$PKGLIST"
-sudo pacman -D --asexplicit - < "$PKGLIST"
-paru -S --asexplicit --needed - < "$PKGLIST"
+
+# Install all packages
+paru -S --needed - < "$PKGLIST"
