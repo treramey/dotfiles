@@ -1,213 +1,136 @@
 #!/bin/bash
 
-{{ $allowed := list
-    "air-bin"
-    "arp-scan"
-    "autoconf"
-    "base"
-    "base-devel"
-    "direnv"
-    "autojump-rs"
-    "automake"
-    "aws-cli-v2-bin"
-    "awslogs"
-    "aws-session-manager-plugin"
-    "bat"
-    "bind"
-    "bun-bin"
-    "cloudflared"
-    "consolas-font"
-    "dmidecode"
-    "dmraid"
-    "docker"
-    "docker-compose"
-    "downgrade"
-    "esbuild"
-    "fuse-overlayfs"
-    "fzf"
-    "git"
-    "github-cli"
-    "gnu-netcat"
-    "go"
-    "goreleaser"
-    "hyperfine"
-    "inetutils"
-    "iwd"
-    "jq"
-    "less"
-    "libaio"
-    "libldm"
-    "make"
-    "mysql-clients"
-    "mono"
-    "ncdu"
-    "neofetch"
-    "neovim"
-    "ngrok"
-    "nmap"
-    "nodejs-lts-iron"
-    "noto-fonts-emoji"
-    "npm"
-    "oh-my-zsh-git"
-    "openssh"
-    "paru-bin"
-    "pkgconf"
-    "plow"
-    "pnpm"
-    "postgresql"
-    "prettierd"
-    "pscale-cli-bin"
-    "pspg"
-    "pv"
-    "python"
-    "reflector"
-    "ripgrep"
-    "rsync"
-    "speedtest-cli"
-    "sshfs"
-    "sshuttle"
-    "sst-bin"
-    "sudo"
-    "syncthing"
-    "sysbench"
-    "tailscale"
-    "terraform"
-    "tmux"
-    "tmux-plugin-manager"
-    "traceroute"
-    "typescript"
-    "unison"
-    "unrar"
-    "unzip"
-    "vercel"
-    "wget"
-    "xclip"
-    "yt-dlp"
-    "zip"
-    "zsh"
-    "btop"
-    "cronie"
-    "elixir"
-    "gitwatch-git"
-    "lazygit"
-    "mitmproxy"
-    "iperf3"
-    "linux"
-    "linux-firmware"
-    "lsof"
-    "mariadb-clients"
-    "exfat-utils"
-    "iw"
-    "stow"
-    "nfs-utils"
-    "rustup" -}}
+{{ if eq .chezmoi.os "linux" -}}
+{{ if eq .chezmoi.osRelease.id "arch" -}}
 
-{{ $official := list
-    "autoconf"
-    "automake"
-    "base"
-    "base-devel"
-    "docker"
-    "git"
-    "inetutils"
-    "less"
-    "linux"
-    "make"
-    "ncdu"
-    "neofetch"
-    "neovim"
-    "openssh"
-    "pkgconf"
-    "python"
-    "rustup"
-    "sudo"
-    "tailscale"
-    "unzip"
-    "wget"
-    "zip"
-    "zsh" - | intersect $allowed }}
-{{ $aur := list
-    "air-bin"
-    "arp-scan"
-    "autojump-rs"
-    "aws-cli-v2-bin"
-    "aws-session-manager-plugin"
-    "awslogs"
-    "bat"
-    "bind"
-    "btop"
-    "bun-bin"
-    "cloudflared"
-    "consolas-font"
-    "cronie"
-    "direnv"
-    "dmidecode"
-    "dmraid"
-    "docker-compose"
-    "downgrade"
-    "esbuild"
-    "elixir"
-    "exfat-utils"
-    "fuse-overlayfs"
-    "fzf"
-    "github-cli"
-    "gitwatch-git"
-    "gnu-netcat"
-    "go"
-    "goreleaser"
-    "hyperfine"
-    "iperf3"
-    "iwd"
-    "jq"
-    "lazygit"
-    "libaio"
-    "libldm"
-    "linux-firmware"
-    "lsof"
-    "mariadb-clients"
-    "mitmproxy"
-    "mono"
-    "mysql-clients"
-    "nfs-utils"
-    "ngrok"
-    "nmap"
-    "noto-fonts-emoji"
-    "oh-my-zsh-git"
-    "paru-bin"
-    "plow"
-    "pnpm"
-    "postgresql"
-    "prettierd"
-    "pscale-cli-bin"
-    "pspg"
-    "pv"
-    "reflector"
-    "ripgrep"
-    "rsync"
-    "speedtest-cli"
-    "sshfs"
-    "sshuttle"
-    "sst-bin"
-    "syncthing"
-    "sysbench"
-    "terraform"
-    "tmux"
-    "tmux-plugin-manager"
-    "traceroute"
-    "typescript"
-    "unison"
-    "unrar"
-    "vercel"
-    "xclip"
-    "yt-dlp" - | intersect $allowed }}
+packages=(
+    air-bin
+    arp-scan
+    autoconf
+    base
+    base-devel
+    direnv
+    autojump-rs
+    automake
+    aws-cli-v2-bin
+    awslogs
+    aws-session-manager-plugin
+    bat
+    bind
+    bun-bin
+    cloudflared
+    consolas-font
+    dmidecode
+    dmraid
+    docker
+    docker-compose
+    downgrade
+    esbuild
+    fuse-overlayfs
+    fzf
+    git
+    github-cli
+    gnu-netcat
+    go
+    goreleaser
+    hyperfine
+    inetutils
+    iwd
+    jq
+    less
+    libaio
+    libldm
+    make
+    mysql-clients
+    mono
+    ncdu
+    neofetch
+    neovim
+    ngrok
+    nmap
+    nodejs-lts-iron
+    noto-fonts-emoji
+    npm
+    oh-my-zsh-git
+    openssh
+    paru-bin
+    pkgconf
+    plow
+    pnpm
+    postgresql
+    prettierd
+    pscale-cli-bin
+    pspg
+    pv
+    python
+    reflector
+    ripgrep
+    rsync
+    speedtest-cli
+    sshfs
+    sshuttle
+    sst-bin
+    sudo
+    syncthing
+    sysbench
+    tailscale
+    terraform
+    tmux
+    tmux-plugin-manager
+    traceroute
+    typescript
+    unison
+    unrar
+    unzip
+    vercel
+    wget
+    xclip
+    yt-dlp
+    zip
+    zsh
+    btop
+    cronie
+    elixir
+    gitwatch-git
+    lazygit
+    mitmproxy
+    iperf3
+    linux
+    linux-firmware
+    lsof
+    mariadb-clients
+    exfat-utils
+    iw
+    stow
+    nfs-utils
+    rustup
+)
 
-PKGLIST="/tmp/pkglist.$$"
-trap 'rm -f "$PKGLIST"' EXIT
+# Check if paru is installed
+if ! command -v paru &> /dev/null; then
+    echo "Installing paru..."
+    git clone https://aur.archlinux.org/paru.git
+    cd paru
+    makepkg -si --noconfirm
+    cd ..
+    rm -rf paru
+fi
 
-echo "Installing official packages..."
-printf "%s\n" {{ $official | sortAlpha | uniq | join " " }} > "$PKGLIST"
-sudo pacman -S --needed --asexplicit - < "$PKGLIST"
+# Install packages
+echo "Installing packages..."
+paru -Sy --needed --noconfirm "${packages[@]}"
 
-echo "Installing AUR packages..."
-printf "%s\n" {{ $aur | sortAlpha | uniq | join " " }} > "$PKGLIST"
-paru -S --needed --asexplicit - < "$PKGLIST"
+# Enable and start necessary services
+echo "Enabling and starting services..."
+sudo systemctl enable --now docker.service
+sudo systemctl enable --now cronie.service
+sudo systemctl enable --now syncthing.service
+sudo systemctl enable --now tailscale.service
+
+# Add user to docker group
+sudo usermod -aG docker $USER
+
+echo "Package installation complete!"
+
+{{ end -}}
+{{ end -}}
