@@ -1,7 +1,5 @@
 #!/bin/bash
-
-{{ if eq .chezmoi.os "linux" -}}
-{{ if eq .chezmoi.osRelease.id "arch" -}}
+set -eufo pipefail
 
 packages=(
     air-bin
@@ -11,7 +9,6 @@ packages=(
     base-devel
     bat
     bind
-    borders
     bun-bin
     cloudflared
     cmake
@@ -35,7 +32,6 @@ packages=(
     git-delta
     github-cli
     gleam
-    gnu-netcat
     go
     goreleaser
     hyperfine
@@ -45,10 +41,12 @@ packages=(
     jq
     julia
     just
+    jdk-openjdk
     lazygit
     less
     libaio
     libldm
+    luarocks
     lynx
     make
     mysql-clients
@@ -59,15 +57,10 @@ packages=(
     ngrok
     ninja
     nmap
-    node
     nodejs-lts-iron
     noto-fonts-emoji
-    npm
     nushell
-    oh-my-zsh-git
     openssh
-    paru-bin
-    pipx
     pkgconf
     plow
     pnpm
@@ -77,12 +70,11 @@ packages=(
     pscale-cli-bin
     pspg
     pv
-    pyenv
     python
+    python-pip
     reflector
     ripgrep
     rsync
-    sevenzip
     speedtest-cli
     sshfs
     sshuttle
@@ -93,8 +85,6 @@ packages=(
     sysbench
     tailscale
     terraform
-    tmux
-    tmux-plugin-manager
     traceroute
     typescript
     unison
@@ -127,6 +117,18 @@ packages=(
     rustup
 )
 
+
+# Function to install a package with auto-selection of the first option if multiple are available
+install_package() {
+    local package=$1
+    # Try to install the package normally first
+    if ! paru -S --needed --noconfirm "$package" 2>/dev/null; then
+        echo "Multiple versions available for $package. Installing the first option..."
+        # Use yes to automatically select the first option (1) for any prompts
+        yes "1" | paru -S --needed "$package"
+    fi
+}
+
 # Check if paru is installed
 if ! command -v paru &> /dev/null; then
     echo "Installing paru..."
@@ -137,11 +139,15 @@ if ! command -v paru &> /dev/null; then
     rm -rf paru
 fi
 
+# Update package database
+echo "Updating package database..."
+paru -Syu
+
 # Install packages
 echo "Installing packages..."
-paru -Sy --needed --noconfirm "${packages[@]}"
+for package in "${packages[@]}"; do
+    echo "Installing $package..."
+    install_package "$package"
+done
 
 echo "Package installation complete!"
-
-{{ end -}}
-{{ end -}}

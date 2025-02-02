@@ -86,7 +86,11 @@ fi
 # +-------------------------+
 # | zsh-syntax-highlighting |
 # +-------------------------+
-source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+{{- if eq .chezmoi.os "darwin" }}
+  source "$(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
+{{- else }}
+  source "/usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.plugin.zsh"
+{{- end }}
 
 # +-------------------------+
 # |    zsh-git-worktrees    |

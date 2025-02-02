@@ -4,6 +4,15 @@
 command_timeout = 1000
 add_newline = true
 
+[username]
+format = '[$user]($style)'
+style_root = 'red bold'
+style_user = 'green bold'
+
+[hostname]
+format = '@[$hostname]($style) '
+style = 'blue dimmed bold'
+
 [character]
 error_symbol = "[󰚌](bold red)"
 
