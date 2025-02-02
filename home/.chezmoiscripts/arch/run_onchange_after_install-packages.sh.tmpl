@@ -1,6 +1,7 @@
 #!/bin/bash
 set -eufo pipefail
 
+{{ if (eq .chezmoi.os "arch") -}}
 packages=(
     air-bin
     arp-scan
@@ -151,3 +152,4 @@ for package in "${packages[@]}"; do
 done
 
 echo "Package installation complete!"
+{{ end -}}

@@ -10,3 +10,6 @@
 .config/neovide
 {{ end }}
 
+{{ if ne .chezmoi.os "arch" }}
+.config/paru
+{{ end }}
