@@ -1,27 +1,33 @@
+-- Update yaziline configuration
 require("yaziline"):setup({
   separator_style = "curvy",
-  select_symbol = "",
+  pick_symbol = "", -- Changed from select_symbol to pick_symbol
   yank_symbol = "󰆐",
-  filename_max_length = 24, -- trim when filename > 24
-  filename_trim_length = 6, -- trim 6 chars from both ends
+  filename_max_length = 24,
+  filename_trim_length = 6,
 })
+
 require("starship"):setup({
   config_file = "~/.config/yazi/starship.toml",
 })
+
 require("git"):setup({})
 
 Status:children_add(function()
-  local h = cx.active.current.hovered
-  if h == nil or ya.target_family() ~= "unix" then
+  local job = cx.active.current.hovered
+  if job == nil or ya.target_family() ~= "unix" then
     return ui.Line({})
   end
 
-  return ui.Line({
-    ui.Span(ya.user_name(h.cha.uid) or tostring(h.cha.uid)):fg("magenta"),
-    ui.Span(":"),
-    ui.Span(ya.group_name(h.cha.gid) or tostring(h.cha.gid)):fg("magenta"),
-    ui.Span(" "),
-  })
+  -- Create the text using ui.Text instead of ui.Line
+  return ui.Text({
+    ui.Line({
+      ui.Span(ya.user_name(job.cha.perm.uid) or tostring(job.cha.perm.uid)):fg("magenta"),
+      ui.Span(":"),
+      ui.Span(ya.group_name(job.cha.perm.gid) or tostring(job.cha.perm.gid)):fg("magenta"),
+      ui.Span(" "),
+    }),
+  }):area(Status.area())
 end, 500, Status.RIGHT)
 
 require("yamb"):setup({
