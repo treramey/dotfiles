@@ -1,9 +1,6 @@
 # Ghostty theme
 theme = catppuccin-macchiato
 
-# Shell integrations
-shell-integration = zsh
-
 # Font family
 font-family = JetBrainsMono Nerd Font
 font-style = Regular
@@ -12,20 +9,27 @@ font-style-bold = Bold
 font-style-bold-italic = Bold Italic
 
 # Font size
-font-size = 16
+font-size = 14
 
-# Opacity of split windows
-unfocused-split-opacity = 0.97  
+gtk-adwaita = false
+gtk-titlebar = false
+confirm-close-surface = false
 
-# Set the background-opacity to be fully opaque
-background-opacity = 1.0
+cursor-style = block
+shell-integration-features = no-cursor
+macos-titlebar-style = tabs
+gtk-adwaita = false
+gtk-titlebar = false
+confirm-close-surface = false
 
-# Cursor style
+# # Cursor style
 cursor-style-blink = true
+
 
 # Clipboard settings
 clipboard-read = allow
 clipboard-write = allow
+copy-on-select = clipboard
 
 # macos options
 macos-option-as-alt = true
