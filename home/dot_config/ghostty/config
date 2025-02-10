@@ -1,6 +1,9 @@
 # Ghostty theme
 theme = catppuccin-macchiato
 
+# Shell integrations
+quit-after-last-window-closed = true
+
 # Font family
 font-family = JetBrainsMono Nerd Font
 font-style = Regular
@@ -9,22 +12,14 @@ font-style-bold = Bold
 font-style-bold-italic = Bold Italic
 
 # Font size
-font-size = 14
-
-gtk-adwaita = false
-gtk-titlebar = false
-confirm-close-surface = false
+font-size = 16
 
 cursor-style = block
+
 shell-integration-features = no-cursor
-macos-titlebar-style = tabs
-gtk-adwaita = false
-gtk-titlebar = false
-confirm-close-surface = false
 
-# # Cursor style
+# Cursor style
 cursor-style-blink = true
-
 
 # Clipboard settings
 clipboard-read = allow
@@ -36,6 +31,7 @@ macos-titlebar-proxy-icon = hidden
 
 # Always show ghostty as the title
 title = ghostty 
+
 # Window settings
 window-width = 90
 window-height = 30
