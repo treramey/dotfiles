@@ -5,3 +5,7 @@
 ["Library/Fonts"]
   type = "archive"
   url = "https://github.com/ryanoasis/nerd-fonts/releases/download/v3.2.1/JetBrainsMono.zip"
+
+[".config/tmux/plugins/tpm"]
+  type = "git-repo" 
+  url = "https://github.com/tmux-plugins/tpm.git"
