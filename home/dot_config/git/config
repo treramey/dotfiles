@@ -7,6 +7,9 @@
 
 [init]
   defaultBranch = main
+ 
+[alias]
+  cw = "!sh clone-worktree"
 
 [core]
   editor = "nvim"
@@ -22,6 +25,9 @@
   # https://git-scm.com/docs/git-update-index#_untracked_cache
   untrackedCache = true
 
+[color]
+    ui = true
+
 [format]
   pretty = format:%C(yellow)%h %Cblue%>(15)%ad %Cgreen%<(15)%aN%Cred%d %Creset%s
 
@@ -36,39 +42,44 @@
   whoami = config user.email
 
 [diff]
+  algorithm = "histogram"
+  indentHeuristic = true
   colorMoved = default
 
 [interactive]
   diffFilter = delta --color-only
 
 [delta]
-  features = catppuccin-mocha
-
-[delta "catppuccin-mocha"]
-  blame-palette = "#1e1e2e #181825 #11111b #313244 #45475a"
-  commit-decoration-style = box ul
+  side-by-side = true
   dark = true
-  file-style = "#89b4fa"  # blue
-  file-decoration-style = "#b4befe" # lavender
-  hunk-header-style = "omit"
-  line-numbers = true
-  line-numbers-zero-style = "#6c7086" # overlay0
-  line-numbers-left-style = "#6c7086" # overlay0
-  line-numbers-right-style = "#6c7086" # overlay0
-  line-numbers-plus-style = bold "#a6e3a1" # green
-  line-numbers-minus-style = bold "#f38ba8" # red
-  # 25% red 75% base
-  minus-emph-style = bold syntax "#8c5656"
-  # 10% red 90% base
-  minus-style = syntax "#34293a"
-  # 25% green 75% base
-  plus-emph-style = bold syntax "#659383"
-  # 10% green 90% base
-  plus-style = syntax "#2c3239"
-  map-styles = \
-    bold purple => syntax "#494060", \
-    bold blue => syntax "#384361", \
-    bold cyan => syntax "#384d5d", \
-    bold yellow => syntax "#544f4e"
-  # Should match the name of the bat theme
-  syntax-theme = Catppuccin Mocha
+  true-color = always
+  features = catppuccin-macchiato
+
+[delta "catppuccin-macchiato"]
+	blame-palette = "#24273a #1e2030 #181926 #363a4f #494d64"
+	commit-decoration-style = "box ul"
+	dark = true
+	file-decoration-style = "#c6a0f6"
+	file-style = "#c6a0f6"
+	hunk-header-style = "omit"
+	line-numbers = true
+	line-numbers-left-style = "#6e738d"
+	line-numbers-minus-style = "bold #ed8796"
+	line-numbers-plus-style = "bold #a6da95"
+	line-numbers-right-style = "#6e738d"
+	line-numbers-zero-style = "#6e738d"
+	# 25% red 75% base
+	minus-emph-style = "bold syntax #564052"
+	# 10% red 90% base
+	minus-style = "syntax #383143"
+	# 25% green 75% base
+	plus-emph-style = "bold syntax #455552"
+	# 10% green 90% base
+	plus-style = "syntax #313943"
+	map-styles = \
+		bold purple => syntax "#4d4569", \
+		bold blue => syntax "#3e4868", \
+		bold cyan => syntax "#3f5365", \
+		bold yellow => syntax "#585253"
+	# Should match the name of the bat theme
+	syntax-theme = "Catppuccin Macchiato"
