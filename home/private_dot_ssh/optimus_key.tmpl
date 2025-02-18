@@ -1,0 +1,6 @@
+{{- if (eq .chezmoi.os "linux") -}}
+{{ (bitwarden "item" "sshkey").notes -}}
+{{- else -}}
+# For OSX, this file needs a new line character at the end
+{{ (bitwarden "item" "sshkey").notes }}
+{{- end -}}
