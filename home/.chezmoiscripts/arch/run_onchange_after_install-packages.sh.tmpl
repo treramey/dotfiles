@@ -3,129 +3,126 @@ set -eufo pipefail
 
 {{ if (eq .chezmoi.os "linux") -}}
 packages=(
-    air-bin
-    arp-scan
-    autoconf
-    base
-    base-devel
-    bat
-    bind
-    bun-bin
-    cloudflared
-    cmake
-    composer
-    consolas-font
-    curl
-    direnv
-    dmidecode
-    dmraid
-    docker
-    docker-compose
-    downgrade
-    esbuild
-    fd
-    ffmpeg
-    ffmpegthumbnailer
-    fuse-overlayfs
-    fzf
-    gettext
-    git
-    git-delta
-    github-cli
-    gleam
-    go
-    goreleaser
-    hyperfine
-    imagemagick
-    inetutils
-    iwd
-    jq
-    julia
-    just
-    jdk-openjdk
-    lazygit-git
-    less
-    libaio
-    libldm
-    luarocks
-    lynx
-    make
-    mysql-clients
-    mono
-    ncdu
-    neofetch
-    neovim
-    ngrok
-    ninja
-    nmap
-    noto-fonts-emoji
-    nushell
-    openssh
-    pkgconf
-    plow
-    pnpm
-    poppler
-    postgresql
-    prettierd
-    pscale-cli-bin
-    pspg
-    pv
-    reflector
-    ripgrep
-    rsync
-    speedtest-cli
-    sshfs
-    sshuttle
-    sst-bin
-    starship
-    sudo
-    syncthing
-    sysbench
-    tailscale
-    terraform
-    traceroute
-    typescript
-    tmux
-    unison
-    unrar
-    unzip
-    uv
-    vercel
-    wget
-    xclip
-    yazi
-    yt-dlp
-    zellij
-    zip
-    zoxide
-    zsh
-    zsh-syntax-highlighting
-    btop
-    cronie
-    elixir
-    gitwatch-git
-    iperf3
-    linux
-    linux-firmware
-    lsof
-    mariadb-clients
-    exfat-utils
-    iw
-    stow
-    nfs-utils
-    rustup
+  antigen
+  air-bin
+  arp-scan
+  autoconf
+  base
+  base-devel
+  bat
+  bind
+  bun-bin
+  cloudflared
+  cmake
+  composer
+  consolas-font
+  curl
+  direnv
+  dmidecode
+  dmraid
+  docker
+  docker-compose
+  downgrade
+  esbuild
+  fd
+  ffmpeg
+  ffmpegthumbnailer
+  fuse-overlayfs
+  fzf
+  gettext
+  git
+  git-delta
+  github-cli
+  gleam
+  go
+  goreleaser
+  hyperfine
+  imagemagick
+  inetutils
+  iwd
+  jq
+  julia
+  just
+  jdk-openjdk
+  lazygit-git
+  less
+  libaio
+  libldm
+  luarocks
+  lynx
+  make
+  mysql-clients
+  mono
+  ncdu
+  neofetch
+  neovim
+  ngrok
+  ninja
+  nmap
+  noto-fonts-emoji
+  nushell
+  openssh
+  pkgconf
+  plow
+  pnpm
+  poppler
+  postgresql
+  prettierd
+  pscale-cli-bin
+  pspg
+  pv
+  reflector
+  ripgrep
+  rsync
+  speedtest-cli
+  sshfs
+  sshuttle
+  sst-bin
+  starship
+  sudo
+  syncthing
+  sysbench
+  tailscale
+  terraform
+  traceroute
+  typescript
+  tmux
+  unison
+  unrar
+  unzip
+  uv
+  vercel
+  wget
+  xclip
+  yazi
+  yt-dlp
+  zellij
+  zip
+  zoxide
+  zsh
+  zsh-syntax-highlighting
+  btop
+  cronie
+  elixir
+  gitwatch-git
+  iperf3
+  linux
+  linux-firmware
+  lsof
+  mariadb-clients
+  exfat-utils
+  iw
+  stow
+  nfs-utils
+  rustup
 )
 
-
-# Function to install a package with auto-selection of the first option if multiple are available
 install_package() {
-    local package=$1
-    # Try to install the package normally first
-    if ! paru -S --needed --noconfirm "$package" 2>/dev/null; then
-        echo "Multiple versions available for $package. Installing the first option..."
-        # Use yes to automatically select the first option (1) for any prompts
-        yes "1" | paru -S --needed "$package"
-    fi
+  local package=$1
+  if ! paru -S --needed --noconfirm "$package" 2>/dev/null; then
+      echo "Multiple versions available for $package. Installing the first option..."
+      yes "1" | paru -S --needed "$package"
+  fi
 }
 
 # Check if paru is installed
@@ -138,11 +135,9 @@ if ! command -v paru &> /dev/null; then
     rm -rf paru
 fi
 
-# Update package database
 echo "Updating package database..."
 paru -Syu
 
-# Install packages
 echo "Installing packages..."
 for package in "${packages[@]}"; do
     echo "Installing $package..."
