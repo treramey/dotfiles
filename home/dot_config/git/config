@@ -50,7 +50,7 @@
   diffFilter = delta --color-only
 
 [delta]
-  side-by-side = true
+  side-by-side = false
   dark = true
   true-color = always
   features = catppuccin-macchiato
