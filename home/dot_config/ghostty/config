@@ -14,10 +14,6 @@ font-style-bold-italic = Bold Italic
 # Font size
 font-size = 16
 
-cursor-style = block
-
-shell-integration-features = no-cursor
-
 # Cursor style
 cursor-style-blink = true
 
