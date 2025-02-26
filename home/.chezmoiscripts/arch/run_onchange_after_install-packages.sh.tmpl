@@ -145,4 +145,10 @@ for package in "${packages[@]}"; do
 done
 
 echo "Package installation complete!"
+
+if command -v zsh >/dev/null 2>&1; then
+  echo "Setting zsh as the default shell"
+  chsh -s $(which zsh)
+fi
+
 {{ end -}}
