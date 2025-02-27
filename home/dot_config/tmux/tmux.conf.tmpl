@@ -10,6 +10,8 @@ setw -g mouse on
 
 # clipboard
 set -s set-clipboard external
+set -as terminal-features ',xterm-ghostty:clipboard'
+set -g default-terminal "${TERM}"
 
 # renumber-windows when removing 
 set-option -g renumber-windows on
