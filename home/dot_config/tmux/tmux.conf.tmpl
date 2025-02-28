@@ -33,6 +33,13 @@ unbind z
 unbind m
 bind m resize-pane -Z
 
+# Alternate sessions
+unbind Space
+bind-key Space switch-client -l
+
+# When pressing prefix+s to list sessions, I want them sorted by time
+bind s choose-tree -Zs -O time
+
 # Use Ctrl+h, Ctrl+j, Ctrl+k, and Ctrl+l for pane selection
 bind -n C-h select-pane -L
 bind -n C-j select-pane -D
@@ -79,8 +86,8 @@ bind-key -r N run-shell "~/.local/scripts/tmux-sessionizer ~/.config/nvim"
 # List of plugins
 set -g @plugin 'tmux-plugins/tpm'
 set -g @plugin 'tmux-plugins/tmux-sensible'
-set -g @plugin 'tmux-plugins/tmux-continuum'
-set -g @plugin 'tmux-plugins/tmux-resurrect'
+# set -g @plugin 'tmux-plugins/tmux-continuum'
+# set -g @plugin 'tmux-plugins/tmux-resurrect'
 set -g @plugin 'treramey/tmux2k' # theme
 
 # THEME
@@ -110,8 +117,8 @@ set -g @tmux2k-right-plugins "cpu ram battery time"
 
 set -g @tmux2k-military-time true
 
-set -g @resurrect-capture-pane-contents 'on'
-set -g @continuum-restore 'on'
+# set -g @resurrect-capture-pane-contents 'on'
+# set -g @continuum-restore 'on'
 
 # Initialize TMUX plugin manager (keep this line at the very bottom of tmux.conf)
 run '~/.config/tmux/plugins/tpm/tpm'

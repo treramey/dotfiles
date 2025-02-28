@@ -36,13 +36,15 @@ source $ZDOTDIR/scripts/aliais.zsh
 # +---------+
 # | antigen |
 # +---------+
-{{- if eq .chezmoi.os "darwin" }}
-source "$(brew --prefix)/share/antigen/antigen.zsh"
-{{- else }}
-source /usr/share/zsh/share/antigen.zsh
-{{- end }}
-antigen bundle zsh-users/zsh-autosuggestions
-antigen apply
+# {{- if eq .chezmoi.os "darwin" }}
+# source "$(brew --prefix)/share/antigen/antigen.zsh"
+# {{- else }}
+# source /usr/share/zsh/share/antigen.zsh
+# {{- end }}
+# antigen bundle zsh-users/zsh-autosuggestions
+# antigen apply
+
+source $ZDOTDIR/scripts/completion.zsh
 
 # +---------------------+
 # | SYNTAX HIGHLIGHTING |
