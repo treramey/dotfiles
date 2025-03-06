@@ -1,3 +1,7 @@
+set -g default-terminal "${TERM}"
+set -as terminal-overrides ',*:Smulx=\E[4::%p1%dm'  # undercurl support
+set -as terminal-overrides ',*:Setulc=\E[58::2::%p1%{65536}%/%d::%p1%{256}%/%{255}%&%d::%p1%{255}%&%d%;m' 
+
 # Proper prefix
 unbind C-b
 set-option -g prefix C-space
@@ -11,7 +15,6 @@ setw -g mouse on
 # clipboard
 set -s set-clipboard external
 set -as terminal-features ',xterm-ghostty:clipboard'
-set -g default-terminal "${TERM}"
 
 # renumber-windows when removing 
 set-option -g renumber-windows on
@@ -98,7 +101,6 @@ set -g @tmux2k-theme 'default'
 
 # to show icons only
 set -g @tmux2k-icons-only true
-
 set -g @tmux2k-bg-main default
 
 # to not show powerline
