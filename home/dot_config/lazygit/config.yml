@@ -29,6 +29,7 @@ gui:
   authorColors:
     '*': '#b4befe'
   nerdFontsVersion: "3"
+  switchTabsWithPanelJumpKeys: true
 git:
   paging:
     colorArg: always

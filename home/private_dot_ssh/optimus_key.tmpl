@@ -1,1 +1,3 @@
+{{- if (eq .chezmoi.os "darwin") -}}
 {{ (bitwarden "item" "sshkey").notes }}
+{{- end -}}
