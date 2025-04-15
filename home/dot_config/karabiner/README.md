@@ -5,16 +5,11 @@ For the times I'm not blessing my fingertips with the moonlander ;)
 ## General Modifications
 
 ### Basic Key Remaps
-- `Caps Lock` → `Left Control`
-- `Escape` → `Grave Accent/Tilde` (only for specific keyboard)
-- `Grave Accent/Tilde` → `Escape` (only for specific keyboard)
 
-### Special Key Combinations
-- `Right Shift + Escape` → `Tilde (~)`
-- `Super Key + Escape` → `Grave Accent (`)` 
-  - Super Key = Left Shift + Left Command + Left Control + Left Option
+- `Caps Lock` → `Left Control`
 
 ### HYPER Key
+
 - `Right Command` → HYPER (Shift + Command + Option + Control)
 - Blocks system diagnostics shortcuts that use HYPER + `,/./'`
 
@@ -23,6 +18,7 @@ For the times I'm not blessing my fingertips with the moonlander ;)
 Hold `Tab` to activate the following modifications:
 
 ### Function Keys
+
 - `Tab + 1` → `F1`
 - `Tab + 2` → `F2`
 - `Tab + 3` → `F3`
@@ -37,15 +33,18 @@ Hold `Tab` to activate the following modifications:
 - `Tab + =` → `F12`
 
 ### Navigation
+
 - `Tab + h` → `Left Arrow`
 - `Tab + j` → `Down Arrow`
 - `Tab + k` → `Up Arrow`
 - `Tab + l` → `Right Arrow`
 
 ### Delete Key
+
 - `Tab + Backspace` → `Forward Delete`
 
 ## Notes
+
 - Tapping `Tab` alone still functions as normal `Tab`
 - Tab layer has a timeout of 250ms
 - All modifications work with optional modifiers (Shift, Command, etc.)
