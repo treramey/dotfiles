@@ -1,19 +1,30 @@
 #!/usr/bin/env bash
-set -e
+set -euo pipefail
+
+if [ $# -lt 1 ]; then
+    echo "Usage: $(basename "$0") <repository-url> [directory-name]"
+    exit 1
+fi
 
 url=$1
 basename=${url##*/}
 basename=${basename%.git} 
 name=${2:-$basename}
 
-mkdir $name
-cd "$name"
+echo "Cloning repository..."
+git clone "$url"
 
-git clone --bare "$url" .bare
-echo "gitdir: ./.bare" > .git
-
-# Explicitly sets the remote origin fetch so we can fetch remote branches
-git config remote.origin.fetch "+refs/heads/*:refs/remotes/origin/*"
-
-# Gets all branches from origin
-git fetch origin
+echo "Setting up worktree..."
+if [ -d "$basename/.git" ]; then
+    mv "$basename/.git" "$basename.git"
+    rm -rf "$basename"
+    mkdir -p "$basename"
+    mv "$basename.git" "$basename/.git"
+    cd "$basename" || exit 1
+    git config --bool core.bare true
+    git fetch origin
+    echo "Ready for lift-off!"
+else
+    echo "Error: Failed to create bare repository structure."
+    exit 1
+fi

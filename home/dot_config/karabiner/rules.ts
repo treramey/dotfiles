@@ -412,6 +412,12 @@ const rules: KarabinerRules[] = [
 				"raycast://extensions/raycast/emoji-symbols/search-emoji-symbols",
 			),
 		},
+		o: {
+			r: app("Rider"),
+			t: app("Microsoft Teams"),
+			d: app("DevOps"),
+			j: app("Jira"),
+		},
 	}),
 ];
 
