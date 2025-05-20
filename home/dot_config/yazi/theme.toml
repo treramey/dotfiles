@@ -5,7 +5,7 @@
 # vim:fileencoding=utf-8:foldmethod=marker
 
 [flavor]
-use = "catppuccin-mocha"
+dark = "catppuccin-macchiato"
 
 
 [manager]

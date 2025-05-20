@@ -10,6 +10,10 @@
  
 [alias]
   cw = "!sh clone-worktree"
+  wt = worktree
+  wta = worktree add
+  wtr = worktree remove
+  wtp = worktree prune
 
 [core]
   editor = "nvim"

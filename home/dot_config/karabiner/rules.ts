@@ -2,6 +2,8 @@ import fs from "fs";
 import { KarabinerRules } from "./types";
 import { createHyperSubLayers, app, open, rectangle, shell } from "./utils";
 
+const defualtBrowser = "Vivaldi";
+
 const rules: KarabinerRules[] = [
 	// Define the Hyper key itself
 	{
@@ -414,9 +416,13 @@ const rules: KarabinerRules[] = [
 		},
 		o: {
 			r: app("Rider"),
-			t: app("Microsoft Teams"),
+			i: app("Microsoft Teams"),
 			d: app("DevOps"),
+			g: app("DataGrip"),
 			j: app("Jira"),
+			p: app("Postman"),
+			a: app(defualtBrowser),
+			t: app("Ghostty"),
 		},
 	}),
 ];
