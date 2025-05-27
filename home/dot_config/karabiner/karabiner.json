@@ -918,9 +918,15 @@
                 "to": [
                   {
                     "shell_command": "open -a 'Rider.app'"
+                  },
+                  {
+                    "key_code": "m",
+                    "modifiers": [
+                      "left_option"
+                    ]
                   }
                 ],
-                "description": "Open -a 'Rider.app'",
+                "description": "Open Rider and send Option+M",
                 "type": "basic",
                 "from": {
                   "key_code": "r",
@@ -942,9 +948,15 @@
                 "to": [
                   {
                     "shell_command": "open -a 'Microsoft Teams.app'"
+                  },
+                  {
+                    "key_code": "m",
+                    "modifiers": [
+                      "left_option"
+                    ]
                   }
                 ],
-                "description": "Open -a 'Microsoft Teams.app'",
+                "description": "Open Microsoft Teams and send Option+M",
                 "type": "basic",
                 "from": {
                   "key_code": "i",
@@ -966,9 +978,15 @@
                 "to": [
                   {
                     "shell_command": "open -a 'DevOps.app'"
+                  },
+                  {
+                    "key_code": "m",
+                    "modifiers": [
+                      "left_option"
+                    ]
                   }
                 ],
-                "description": "Open -a 'DevOps.app'",
+                "description": "Open DevOps and send Option+M",
                 "type": "basic",
                 "from": {
                   "key_code": "d",
@@ -990,9 +1008,15 @@
                 "to": [
                   {
                     "shell_command": "open -a 'DataGrip.app'"
+                  },
+                  {
+                    "key_code": "m",
+                    "modifiers": [
+                      "left_option"
+                    ]
                   }
                 ],
-                "description": "Open -a 'DataGrip.app'",
+                "description": "Open DataGrip and send Option+M",
                 "type": "basic",
                 "from": {
                   "key_code": "g",
@@ -1014,9 +1038,15 @@
                 "to": [
                   {
                     "shell_command": "open -a 'Jira.app'"
+                  },
+                  {
+                    "key_code": "m",
+                    "modifiers": [
+                      "left_option"
+                    ]
                   }
                 ],
-                "description": "Open -a 'Jira.app'",
+                "description": "Open Jira and send Option+M",
                 "type": "basic",
                 "from": {
                   "key_code": "j",
@@ -1038,9 +1068,15 @@
                 "to": [
                   {
                     "shell_command": "open -a 'Postman.app'"
+                  },
+                  {
+                    "key_code": "m",
+                    "modifiers": [
+                      "left_option"
+                    ]
                   }
                 ],
-                "description": "Open -a 'Postman.app'",
+                "description": "Open Postman and send Option+M",
                 "type": "basic",
                 "from": {
                   "key_code": "p",
@@ -1062,9 +1098,15 @@
                 "to": [
                   {
                     "shell_command": "open -a 'Vivaldi.app'"
+                  },
+                  {
+                    "key_code": "m",
+                    "modifiers": [
+                      "left_option"
+                    ]
                   }
                 ],
-                "description": "Open -a 'Vivaldi.app'",
+                "description": "Open Vivaldi and send Option+M",
                 "type": "basic",
                 "from": {
                   "key_code": "a",
@@ -1086,9 +1128,15 @@
                 "to": [
                   {
                     "shell_command": "open -a 'Ghostty.app'"
+                  },
+                  {
+                    "key_code": "m",
+                    "modifiers": [
+                      "left_option"
+                    ]
                   }
                 ],
-                "description": "Open -a 'Ghostty.app'",
+                "description": "Open Ghostty and send Option+M",
                 "type": "basic",
                 "from": {
                   "key_code": "t",
