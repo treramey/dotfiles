@@ -1,5 +1,5 @@
 # Ghostty theme
-theme = catppuccin-macchiato
+theme = light:rose-pine-dawn,dark:rose-pine
 
 # Font family
 font-family = JetBrainsMono Nerd Font
@@ -22,8 +22,10 @@ clipboard-read = allow
 clipboard-write = allow
 
 # macos options
-macos-option-as-alt = true
 macos-titlebar-proxy-icon = hidden
+macos-window-shadow = false
+macos-icon = custom-style
+macos-icon-frame = chrome
 
 # Always show ghostty as the title
 title = ghostty 

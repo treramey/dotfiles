@@ -917,7 +917,8 @@
               {
                 "to": [
                   {
-                    "shell_command": "open -a 'Rider.app'"
+                    "shell_command": "open -a 'Rider.app'",
+                    "hold_down_milliseconds": 800
                   },
                   {
                     "key_code": "m",
@@ -947,7 +948,8 @@
               {
                 "to": [
                   {
-                    "shell_command": "open -a 'Microsoft Teams.app'"
+                    "shell_command": "open -a 'Microsoft Teams.app'",
+                    "hold_down_milliseconds": 800
                   },
                   {
                     "key_code": "m",
@@ -977,7 +979,8 @@
               {
                 "to": [
                   {
-                    "shell_command": "open -a 'DevOps.app'"
+                    "shell_command": "open -a 'DevOps.app'",
+                    "hold_down_milliseconds": 800
                   },
                   {
                     "key_code": "m",
@@ -1007,7 +1010,8 @@
               {
                 "to": [
                   {
-                    "shell_command": "open -a 'DataGrip.app'"
+                    "shell_command": "open -a 'DataGrip.app'",
+                    "hold_down_milliseconds": 800
                   },
                   {
                     "key_code": "m",
@@ -1037,7 +1041,8 @@
               {
                 "to": [
                   {
-                    "shell_command": "open -a 'Jira.app'"
+                    "shell_command": "open -a 'Jira.app'",
+                    "hold_down_milliseconds": 800
                   },
                   {
                     "key_code": "m",
@@ -1067,7 +1072,8 @@
               {
                 "to": [
                   {
-                    "shell_command": "open -a 'Postman.app'"
+                    "shell_command": "open -a 'Postman.app'",
+                    "hold_down_milliseconds": 800
                   },
                   {
                     "key_code": "m",
@@ -1097,7 +1103,8 @@
               {
                 "to": [
                   {
-                    "shell_command": "open -a 'Vivaldi.app'"
+                    "shell_command": "open -a 'Vivaldi.app'",
+                    "hold_down_milliseconds": 800
                   },
                   {
                     "key_code": "m",
@@ -1127,7 +1134,8 @@
               {
                 "to": [
                   {
-                    "shell_command": "open -a 'Ghostty.app'"
+                    "shell_command": "open -a 'Ghostty.app'",
+                    "hold_down_milliseconds": 800
                   },
                   {
                     "key_code": "m",

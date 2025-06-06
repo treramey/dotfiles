@@ -169,6 +169,7 @@ export function app(name: string): LayerCommand {
 		to: [
 			{
 				shell_command: `open -a '${name}.app'`,
+				hold_down_milliseconds: 800,
 			},
 			{
 				key_code: "m",
