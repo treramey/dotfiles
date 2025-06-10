@@ -165,17 +165,5 @@ export function open(what: string): LayerCommand {
  * Shortcut for "Open an app" command (of which there are a bunch)
  */
 export function app(name: string): LayerCommand {
-	return {
-		to: [
-			{
-				shell_command: `open -a '${name}.app'`,
-				hold_down_milliseconds: 800,
-			},
-			{
-				key_code: "m",
-				modifiers: ["left_option"],
-			},
-		],
-		description: `Open ${name} and send Option+M`,
-	};
+	return open(`-a '${name}.app'`);
 }
