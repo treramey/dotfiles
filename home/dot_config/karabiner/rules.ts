@@ -416,6 +416,7 @@ const rules: KarabinerRules[] = [
 		},
 		o: {
 			r: app("Rider"),
+			c: app("Claude"),
 			i: app("Microsoft Teams"),
 			d: app("DevOps"),
 			g: app("DataGrip"),

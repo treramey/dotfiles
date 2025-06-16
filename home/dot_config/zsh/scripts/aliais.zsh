@@ -47,4 +47,5 @@ function rider() {
 alias zj=zellij
 alias lg=lazygit
 alias cw=clone-worktrees
+alias claude="$HOME/.claude/local/claude"
 

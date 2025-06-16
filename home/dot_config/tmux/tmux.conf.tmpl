@@ -1,6 +1,9 @@
-set -g default-terminal "${TERM}"
-set -as terminal-overrides ',*:Smulx=\E[4::%p1%dm'  # undercurl support
-set -as terminal-overrides ',*:Setulc=\E[58::2::%p1%{65536}%/%d::%p1%{256}%/%{255}%&%d::%p1%{255}%&%d%;m' 
+# set -g default-terminal "${TERM}"
+set -g default-terminal 'tmux-256color'
+set -as terminal-overrides ',*256col*:RGB'
+set -as terminal-overrides ',*:Smulx=\E[4::%p1%dm' # undercurl support
+set -as terminal-overrides ',*:Setulc=\E[58::2::%p1%{65536}%/%d::%p1%{256}%/%{255}%&%d::%p1%{255}%&%d%;m' # underscore colors - needs tmux-3.0
+set -s escape-time 0
 
 # Proper prefix
 unbind C-b
@@ -97,7 +100,7 @@ set -g @plugin 'treramey/tmux2k' # theme
 set-option -g status-position top
 
 # use a theme
-set -g @tmux2k-theme 'default'
+set -g @tmux2k-theme 'rosepine'
 
 # to show icons only
 set -g @tmux2k-icons-only true
