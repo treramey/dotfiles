@@ -1,0 +1,58 @@
+start-at-login = true
+
+after-startup-command = [
+  'exec-and-forget sketchybar',
+]
+exec-on-workspace-change = [
+	'/bin/bash',
+	'-c',
+	'/opt/homebrew/opt/sketchybar/bin/sketchybar --trigger aerospace_workspace_change FOCUSED_WORKSPACE=$AEROSPACE_FOCUSED_WORKSPACE',
+]
+
+on-focus-changed = [ 'exec-and-forget /opt/homebrew/opt/sketchybar/bin/sketchybar --trigger aerospace_focus_change' ]
+
+[gaps]
+inner.horizontal = 10
+inner.vertical =   10
+outer.left =       12
+outer.bottom =     10
+outer.top =        10
+outer.right =      12
+
+[[on-window-detected]]
+  if.app-id = 'com.vivaldi.Vivaldi'
+  run = 'move-node-to-workspace 1'
+
+[[on-window-detected]]
+  if.app-id = 'com.jetbrains.datagrip'
+  run = 'move-node-to-workspace 2'
+
+[[on-window-detected]]
+  if.app-id = 'com.mitchellh.ghostty'
+  run = 'move-node-to-workspace 2'
+
+[[on-window-detected]]
+  if.app-id = 'com.jetbrains.rider'
+  run = 'move-node-to-workspace 2'
+
+[[on-window-detected]]
+  if.app-id = 'dev.zed.Zed'
+  run = 'move-node-to-workspace 2'
+
+[[on-window-detected]]
+  if.app-id = 'com.microsoft.teams2'
+  run = 'move-node-to-workspace 3'
+
+[[on-window-detected]]
+  if.app-id = 'com.microsoft.Outlook'
+  run = 'move-node-to-workspace 3'
+
+[[on-window-detected]]
+  if.app-id = 'com.spotify.client'
+  run = 'move-node-to-workspace 4'
+
+[mode.main.binding]
+cmd-alt-ctrl-shift-1 = 'workspace 1'
+cmd-alt-ctrl-shift-2 = 'workspace 2'
+cmd-alt-ctrl-shift-3 = 'workspace 3'
+cmd-alt-ctrl-shift-4 = 'workspace 4'
