@@ -11,6 +11,9 @@ exec-on-workspace-change = [
 
 on-focus-changed = [ 'exec-and-forget /opt/homebrew/opt/sketchybar/bin/sketchybar --trigger aerospace_focus_change' ]
 
+accordion-padding = 0
+
+
 [gaps]
 inner.horizontal = 10
 inner.vertical =   10
@@ -21,6 +24,10 @@ outer.right =      12
 
 [[on-window-detected]]
   if.app-id = 'com.vivaldi.Vivaldi'
+  run = 'move-node-to-workspace 1'
+
+[[on-window-detected]]
+  if.app-id = 'com.anthropic.claudefordesktop'
   run = 'move-node-to-workspace 1'
 
 [[on-window-detected]]
@@ -52,7 +59,17 @@ outer.right =      12
   run = 'move-node-to-workspace 4'
 
 [mode.main.binding]
+alt-s = 'layout v_accordion' # 'layout stacking' in i3
+alt-w = 'layout h_accordion' # 'layout tabbed' in i3
+alt-e = 'layout tiles horizontal vertical' # 'layout toggle split' in i3
+
+# hyper key bindings
 cmd-alt-ctrl-shift-1 = 'workspace 1'
 cmd-alt-ctrl-shift-2 = 'workspace 2'
 cmd-alt-ctrl-shift-3 = 'workspace 3'
 cmd-alt-ctrl-shift-4 = 'workspace 4'
+
+alt-h = 'focus left'
+alt-j = 'focus down'
+alt-k = 'focus up'
+alt-l = 'focus right'
