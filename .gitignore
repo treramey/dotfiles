@@ -1,2 +1,10 @@
-.aider*
 node_modules/
+lazy-lock.json
+
+# macOS system files
+.DS_STORE
+.DS_Store
+
+# Chezmoi specific ignores
+.chezmoi.toml.tmp
+.chezmoistate

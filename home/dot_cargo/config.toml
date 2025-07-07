@@ -1,5 +1,0 @@
-[alias]
-r = "run"
-t = "test"
-c = "check"
-b = "build"

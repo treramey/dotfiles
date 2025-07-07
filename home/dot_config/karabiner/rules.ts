@@ -424,6 +424,7 @@ const rules: KarabinerRules[] = [
 			p: app("Postman"),
 			a: app(defualtBrowser),
 			t: app("Ghostty"),
+			v: app("Visual Studio Code"),
 		},
 	}),
 ];

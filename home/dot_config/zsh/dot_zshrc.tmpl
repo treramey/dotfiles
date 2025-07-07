@@ -56,16 +56,27 @@ source $ZDOTDIR/scripts/completion.zsh
 # | SYNTAX HIGHLIGHTING |
 # +---------------------+
 # TO set activate highlighter
-ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern cursor)
+#ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern cursor)
 
 # Declare the variable
-typeset -A ZSH_HIGHLIGHT_STYLES
+# typeset -A ZSH_HIGHLIGHT_STYLES
 
 # To differentiate aliases from other command types
-ZSH_HIGHLIGHT_STYLES[alias]='fg=#94e2d5,bold'
+# ZSH_HIGHLIGHT_STYLES[alias]='fg=#94e2d5,bold'
 
 # To have paths colored instead of underlined
-ZSH_HIGHLIGHT_STYLES[path]='fg=#cba6f7'
+# ZSH_HIGHLIGHT_STYLES[path]='fg=#cba6f7'
+
+source $ZDOTDIR/plugins/rose-pine-zsh/rose-pine-zsh.zsh
+
+# Dynamic theme switching based on system appearance
+#if [[ "$(defaults read -g AppleInterfaceStyle 2>/dev/null)" == "Dark" ]]; then
+#  colorize_zsh "rose-pine"
+#else
+#  colorize_zsh "rose-pine-dawn"
+#fi
+
+colorize_zsh "rose-pine"
 
 # AZURE CLI
 if type az &>/dev/null; then
