@@ -1,4 +1,3 @@
-#!/usr/bin/env bash
 set -g @tmux2k-theme 'rosepine'
 
 # Source tmux2k

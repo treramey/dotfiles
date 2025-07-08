@@ -1,5 +1,3 @@
-#!/usr/bin/env bash
-
 set -g @tmux2k-theme 'rose-pine-dawn'
 
 # Source tmux2k
