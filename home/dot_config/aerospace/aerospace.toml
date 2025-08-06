@@ -13,7 +13,6 @@ on-focus-changed = [ 'exec-and-forget /opt/homebrew/opt/sketchybar/bin/sketchyba
 
 accordion-padding = 0
 
-
 [gaps]
 inner.horizontal = 10
 inner.vertical =   10
@@ -23,40 +22,28 @@ outer.top =        10
 outer.right =      12
 
 [[on-window-detected]]
-  if.app-id = 'com.vivaldi.Vivaldi'
-  run = 'move-node-to-workspace 1'
-
-[[on-window-detected]]
-  if.app-id = 'com.anthropic.claudefordesktop'
-  run = 'move-node-to-workspace 1'
-
-[[on-window-detected]]
-  if.app-id = 'com.jetbrains.datagrip'
-  run = 'move-node-to-workspace 2'
-
-[[on-window-detected]]
   if.app-id = 'com.mitchellh.ghostty'
   run = 'move-node-to-workspace 2'
 
 [[on-window-detected]]
   if.app-id = 'com.jetbrains.rider'
-  run = 'move-node-to-workspace 2'
+  run = 'move-node-to-workspace 3'
 
 [[on-window-detected]]
-  if.app-id = 'dev.zed.Zed'
-  run = 'move-node-to-workspace 2'
+  if.app-id = 'com.jetbrains.datagrip'
+  run = 'move-node-to-workspace 4'
 
 [[on-window-detected]]
   if.app-id = 'com.microsoft.teams2'
-  run = 'move-node-to-workspace 3'
+  run = 'move-node-to-workspace 5'
 
 [[on-window-detected]]
   if.app-id = 'com.microsoft.Outlook'
-  run = 'move-node-to-workspace 3'
+  run = 'move-node-to-workspace 5'
 
 [[on-window-detected]]
   if.app-id = 'com.spotify.client'
-  run = 'move-node-to-workspace 4'
+  run = 'move-node-to-workspace 6'
 
 [mode.main.binding]
 alt-s = 'layout v_accordion' # 'layout stacking' in i3
@@ -68,6 +55,8 @@ cmd-alt-ctrl-shift-1 = 'workspace 1'
 cmd-alt-ctrl-shift-2 = 'workspace 2'
 cmd-alt-ctrl-shift-3 = 'workspace 3'
 cmd-alt-ctrl-shift-4 = 'workspace 4'
+cmd-alt-ctrl-shift-5 = 'workspace 5'
+cmd-alt-ctrl-shift-6 = 'workspace 6'
 
 alt-h = 'focus left'
 alt-j = 'focus down'

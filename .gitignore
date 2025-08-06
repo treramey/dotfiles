@@ -8,3 +8,10 @@ lazy-lock.json
 # Chezmoi specific ignores
 .chezmoi.toml.tmp
 .chezmoistate
+
+!home/.claude/CLAUDE.md
+!home/.claude/settings.json
+!home/.claude/agents
+!home/.claude/agents/*
+!home/.claude/commands
+!home/.claude/commands/*

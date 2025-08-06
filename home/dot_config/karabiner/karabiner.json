@@ -947,7 +947,7 @@
                 "description": "Open -a 'Claude.app'",
                 "type": "basic",
                 "from": {
-                  "key_code": "c",
+                  "key_code": "a",
                   "modifiers": {
                     "mandatory": [
                       "any"
@@ -1091,7 +1091,7 @@
                 "description": "Open -a 'Vivaldi.app'",
                 "type": "basic",
                 "from": {
-                  "key_code": "a",
+                  "key_code": "b",
                   "modifiers": {
                     "mandatory": [
                       "any"

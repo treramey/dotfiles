@@ -1,38 +1,48 @@
 # Ghostty theme
 theme = light:rose-pine-dawn,dark:rose-pine
 
+# Shell integrations
+shell-integration = fish
+quit-after-last-window-closed = true
+
 # Font family
-font-family = Monolisa Vindia
+font-family = MonoLisa
 font-style = Regular
 font-style-italic = Regular Italic
 font-style-bold = Bold
 font-style-bold-italic = Bold Italic
 
 # Font size
-font-size = 16
+font-size = 18
 
-cursor-invert-fg-bg = true
-cursor-style = block
-cursor-style-blink = false
-mouse-hide-while-typing = true
-shell-integration-features = no-cursor
+# Opacity of split windows
+unfocused-split-opacity = 0.97  
+
+# Set the background-opacity to be fully opaque
+background-opacity = 1.0
+
+# Cursor style
+cursor-style-blink = true
 
 # Clipboard settings
 clipboard-read = allow
 clipboard-write = allow
 
 # macos options
+macos-option-as-alt = true
 macos-titlebar-proxy-icon = hidden
-macos-window-shadow = false
-macos-icon = custom-style
-macos-icon-frame = chrome
 
 # Always show ghostty as the title
 title = ghostty 
 
-
 # Window settings
-window-padding-y = 4,0
-background-blur = true
-background-opacity = 0.98
+window-width = 90
+window-height = 30
+window-colorspace = display-p3
+window-padding-color = background
+window-padding-balance = true
+window-padding-x = 0
+window-padding-y = 0
 
+# Decrease scroll sensitivity
+mouse-scroll-multiplier = 0.4
