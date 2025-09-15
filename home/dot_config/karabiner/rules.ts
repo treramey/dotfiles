@@ -395,7 +395,7 @@ const rules: KarabinerRules[] = [
 	},
 
 	...createHyperSubLayers({
-		r: {
+		o: {
 			j: open("raycast://extensions/lardissone/raindrop-io/search"),
 			k: open("raycast://extensions/mblode/google-search/index"),
 			l: open("raycast://extensions/raycast/file-search/search-files"),
@@ -407,25 +407,27 @@ const rules: KarabinerRules[] = [
 			u: open("raycast://extensions/raycast/apple-reminders/create-reminder"),
 			i: open("https://google.com/search?q=&tbm=isch"),
 			// i: open("raycast://extensions/raycast/apple-reminders/my-reminders"),
-			o: open("raycast://extensions/raycast/github/search-repositories"),
+			g: open("raycast://extensions/raycast/github/search-repositories"),
 			p: open("raycast://extensions/nhojb/brew/search"),
 			h: open("raycast://extensions/mattisssa/spotify-player/search"),
 			e: open(
 				"raycast://extensions/raycast/emoji-symbols/search-emoji-symbols",
 			),
 		},
-		o: {
-			r: app("Rider"),
-			a: app("Claude"),
-			i: app("Microsoft Teams"),
-			d: app("DevOps"),
-			g: app("DataGrip"),
-			j: app("Jira"),
-			p: app("Postman"),
-			b: app(defualtBrowser),
-			t: app("Ghostty"),
-			v: app("Visual Studio Code"),
-		},
+		r: app("Rider"),
+		e: app("Microsoft Outlook"),
+		a: app("Claude"),
+		i: app("Microsoft Teams"),
+		d: app("DevOps"),
+		c: app("Cursor"),
+		g: app("DataGrip"),
+		m: app("Spotify"),
+		j: app("Jira"),
+		p: app("Postman"),
+		f: app("Finder"),
+		b: app(defualtBrowser),
+		t: app("Ghostty"),
+		v: app("Visual Studio Code"),
 	}),
 ];
 
